@@ -1,205 +1,119 @@
-"""
-banzhaf.py
+import itertools
+import pandas as pd
 
-Core utilities for weighted voting games and the Banzhaf Power Index.
+# -----------------------------
+# 1. Input real countries + populations
+# Replace these with official Eurostat values you want to use
+# -----------------------------
+pop = {
+    "Germany": 83.6,
+    "France": 68.4,
+    "Spain": 48.6,
+    "Netherlands": 18.0,
+    "Malta": 0.6,
+    "Luxembourg": 0.7
+}
 
-Model:
-    [q : w1, w2, ..., wn]
+countries = list(pop.keys())
+n = len(countries)
 
-Definitions:
-- A coalition is any subset of players.
-- A coalition is winning if its total weight >= quota q.
-- A player is critical in a winning coalition if removing that player
-  makes the coalition losing.
-- The raw Banzhaf count eta_i is the number of winning coalitions in
-  which player i is critical.
-- The normalized Banzhaf index beta_i is:
-      beta_i = eta_i / sum_j eta_j
-"""
+# -----------------------------
+# 2. Simplified EU-style dual-majority rule
+# For 6 countries:
+# - at least 4 countries in favour
+# - at least 65% of total population
+# -----------------------------
+state_threshold = 4
+total_population = sum(pop.values())
+population_threshold = 0.65 * total_population
 
-from __future__ import annotations
+# -----------------------------
+# 3. Enumerate all coalitions
+# -----------------------------
+rows = []
+critical_count = {c: 0 for c in countries}
 
-from dataclasses import dataclass
-from itertools import combinations
-from typing import Iterable, List, Sequence, Tuple
+for r in range(1, n + 1):
+    for coalition in itertools.combinations(countries, r):
+        coalition = list(coalition)
+        num_states = len(coalition)
+        coalition_population = sum(pop[c] for c in coalition)
 
+        meets_state = num_states >= state_threshold
+        meets_population = coalition_population >= population_threshold
+        winning = meets_state and meets_population
 
-@dataclass(frozen=True)
-class WeightedVotingGame:
-    quota: int
-    weights: Tuple[int, ...]
+        critical_states = []
 
-    def __post_init__(self) -> None:
-        if self.quota <= 0:
-            raise ValueError("quota must be positive")
-        if len(self.weights) == 0:
-            raise ValueError("weights must be non-empty")
-        if any(w < 0 for w in self.weights):
-            raise ValueError("weights must be non-negative")
+        if winning:
+            for c in coalition:
+                reduced = [x for x in coalition if x != c]
+                reduced_num_states = len(reduced)
+                reduced_population = sum(pop[x] for x in reduced)
 
-    @property
-    def n(self) -> int:
-        return len(self.weights)
+                reduced_meets_state = reduced_num_states >= state_threshold
+                reduced_meets_population = reduced_population >= population_threshold
+                reduced_winning = reduced_meets_state and reduced_meets_population
 
-    @property
-    def players(self) -> Tuple[int, ...]:
-        """1-based player labels for math/report readability."""
-        return tuple(range(1, self.n + 1))
+                if not reduced_winning:
+                    critical_states.append(c)
+                    critical_count[c] += 1
 
+        rows.append({
+            "Coalition": ", ".join(coalition),
+            "#States": num_states,
+            "Population": round(coalition_population, 1),
+            "Meets state threshold": "Yes" if meets_state else "No",
+            "Meets population threshold": "Yes" if meets_population else "No",
+            "Winning": "Yes" if winning else "No",
+            "Critical states": ", ".join(critical_states) if critical_states else "--"
+        })
 
-def coalition_weight(game: WeightedVotingGame, coalition: Sequence[int]) -> int:
-    """
-    Return total weight of a coalition.
+# -----------------------------
+# 4. Full coalition table
+# -----------------------------
+coalition_df = pd.DataFrame(rows)
 
-    coalition uses 1-based player labels, e.g. (1, 3, 4).
-    """
-    return sum(game.weights[player - 1] for player in coalition)
+# Sort for readability
+coalition_df = coalition_df.sort_values(
+    by=["#States", "Population"],
+    ascending=[True, True]
+).reset_index(drop=True)
 
+# -----------------------------
+# 5. Banzhaf summary
+# -----------------------------
+total_critical = sum(critical_count.values())
 
-def all_coalitions(players: Sequence[int]) -> Iterable[Tuple[int, ...]]:
-    """Yield all coalitions (including empty and grand coalition)."""
-    for r in range(len(players) + 1):
-        yield from combinations(players, r)
+summary_rows = []
+for c in countries:
+    beta = critical_count[c] / total_critical if total_critical > 0 else 0
+    summary_rows.append({
+        "Country": c,
+        "Population": pop[c],
+        "Critical Count": critical_count[c],
+        "Normalized Banzhaf Index": round(beta, 4)
+    })
 
+summary_df = pd.DataFrame(summary_rows).sort_values(
+    by="Normalized Banzhaf Index", ascending=False
+).reset_index(drop=True)
 
-def is_winning(game: WeightedVotingGame, coalition: Sequence[int]) -> bool:
-    """Check whether a coalition is winning."""
-    return coalition_weight(game, coalition) >= game.quota
+# -----------------------------
+# 6. Print results
+# -----------------------------
+print("=== FULL COALITION TABLE ===")
+print(coalition_df.to_string(index=False))
 
+print("\n=== BANZHAF SUMMARY ===")
+print(summary_df.to_string(index=False))
 
-def critical_players(game: WeightedVotingGame, coalition: Sequence[int]) -> List[int]:
-    """
-    Return the players who are critical in the given coalition.
+# -----------------------------
+# 7. Save to CSV (optional)
+# -----------------------------
+coalition_df.to_csv("eu_mini_case_coalitions.csv", index=False)
+summary_df.to_csv("eu_mini_case_summary.csv", index=False)
 
-    A player is critical iff the coalition is winning and removing that player
-    makes it losing.
-    """
-    if not is_winning(game, coalition):
-        return []
-
-    total = coalition_weight(game, coalition)
-    critical: List[int] = []
-    for player in coalition:
-        player_weight = game.weights[player - 1]
-        if total - player_weight < game.quota:
-            critical.append(player)
-    return critical
-
-
-def raw_banzhaf_counts(game: WeightedVotingGame) -> List[int]:
-    """
-    Compute the raw Banzhaf counts eta_i for each player.
-    """
-    counts = [0] * game.n
-    for coalition in all_coalitions(game.players):
-        for player in critical_players(game, coalition):
-            counts[player - 1] += 1
-    return counts
-
-
-def normalized_banzhaf(game: WeightedVotingGame) -> List[float]:
-    """
-    Compute normalized Banzhaf indices beta_i.
-
-    If the total raw count is 0, return all zeros.
-    """
-    counts = raw_banzhaf_counts(game)
-    total = sum(counts)
-    if total == 0:
-        return [0.0] * game.n
-    return [count / total for count in counts]
-
-
-def weight_shares(game: WeightedVotingGame) -> List[float]:
-    """
-    Compute each player's share of total assigned weight.
-    """
-    total_weight = sum(game.weights)
-    if total_weight == 0:
-        return [0.0] * game.n
-    return [w / total_weight for w in game.weights]
-
-
-def coalition_table(game: WeightedVotingGame) -> List[dict]:
-    """
-    Build a full coalition table useful for debugging, exporting, or reports.
-
-    Each row contains:
-    - coalition
-    - weight
-    - winning
-    - critical_players
-    """
-    rows = []
-    for coalition in all_coalitions(game.players):
-        rows.append(
-            {
-                "coalition": coalition,
-                "weight": coalition_weight(game, coalition),
-                "winning": is_winning(game, coalition),
-                "critical_players": critical_players(game, coalition),
-            }
-        )
-    return rows
-
-
-def summary(game: WeightedVotingGame) -> dict:
-    """
-    Return a compact summary of the weighted voting game.
-    """
-    raw = raw_banzhaf_counts(game)
-    norm = normalized_banzhaf(game)
-    shares = weight_shares(game)
-
-    return {
-        "quota": game.quota,
-        "weights": list(game.weights),
-        "players": list(game.players),
-        "weight_shares": shares,
-        "raw_banzhaf": raw,
-        "normalized_banzhaf": norm,
-    }
-
-
-def format_summary(game: WeightedVotingGame, decimals: int = 4) -> str:
-    """
-    Pretty-print a report-friendly summary.
-    """
-    info = summary(game)
-
-    lines = []
-    lines.append(f"Game: [{info['quota']} : {', '.join(map(str, info['weights']))}]")
-    lines.append("")
-    lines.append("Player | Weight | Weight Share | Raw Banzhaf | Normalized Banzhaf")
-    lines.append("-" * 68)
-
-    for i, player in enumerate(info["players"]):
-        lines.append(
-            f"{player:>6} | "
-            f"{info['weights'][i]:>6} | "
-            f"{info['weight_shares'][i]:>{12 + decimals}.{decimals}f} | "
-            f"{info['raw_banzhaf'][i]:>11} | "
-            f"{info['normalized_banzhaf'][i]:>{18 + decimals}.{decimals}f}"
-        )
-
-    return "\n".join(lines)
-
-
-def main() -> None:
-    # Example from a typical weighted voting game.
-    game = WeightedVotingGame(quota=6, weights=(4, 3, 2, 1))
-
-    print(format_summary(game))
-    print("\nWinning coalitions with critical players:\n")
-
-    for row in coalition_table(game):
-        if row["winning"]:
-            print(
-                f"{row['coalition']}: "
-                f"weight={row['weight']}, "
-                f"critical={row['critical_players']}"
-            )
-
-
-if __name__ == "__main__":
-    main()
+print("\nSaved files:")
+print(" - eu_mini_case_coalitions.csv")
+print(" - eu_mini_case_summary.csv")
