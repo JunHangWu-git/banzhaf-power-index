@@ -1,0 +1,16 @@
+Coalition,Total Weight,Winning,Critical Players
+{Player 4},1,No,--
+{Player 3},4,No,--
+"{Player 3, Player 4}",5,No,--
+{Player 2},6,No,--
+{Player 1},7,No,--
+"{Player 2, Player 4}",7,No,--
+"{Player 1, Player 4}",8,No,--
+"{Player 2, Player 3}",10,Yes,"Player 2, Player 3"
+"{Player 1, Player 3}",11,Yes,"Player 1, Player 3"
+"{Player 2, Player 3, Player 4}",11,Yes,"Player 2, Player 3"
+"{Player 1, Player 3, Player 4}",12,Yes,"Player 1, Player 3"
+"{Player 1, Player 2}",13,Yes,"Player 1, Player 2"
+"{Player 1, Player 2, Player 4}",14,Yes,"Player 1, Player 2"
+"{Player 1, Player 2, Player 3}",17,Yes,--
+"{Player 1, Player 2, Player 3, Player 4}",18,Yes,--

@@ -1,0 +1,68 @@
+{
+  "dataset_name": "EU dual-majority mini-model population sample",
+  "reference_date": "2024-01-01",
+  "unit": "millions of persons",
+  "selection_note": "This is a six-country teaching subset for the mini-model, not the full EU-27 dataset.",
+  "rule": {
+    "state_threshold_count": 4,
+    "population_threshold_share": 0.65,
+    "state_threshold_note": "The mini-model uses 4 of 6 supporting states as a simple analogue of the Lisbon 55% member-state threshold."
+  },
+  "sources": [
+    {
+      "source_id": "eurostat_demography_2025",
+      "publisher": "Eurostat",
+      "title": "Demography of Europe - 2025 edition",
+      "dataset_code": "demo_gind",
+      "url": "https://ec.europa.eu/eurostat/web/interactive-publications/demography-2025",
+      "accessed_on": "2026-03-25",
+      "notes": "Rounded population figures reported for 1 January 2024."
+    },
+    {
+      "source_id": "cbs_population_2024",
+      "publisher": "Statistics Netherlands (CBS)",
+      "title": "Bevolking; geslacht, leeftijd en nationaliteit op 1 januari",
+      "url": "https://www.cbs.nl/nl-nl/cijfers/detail/85510NED",
+      "accessed_on": "2026-03-25",
+      "notes": "Official Netherlands population on 1 January 2024."
+    }
+  ],
+  "countries": [
+    {
+      "country": "Germany",
+      "country_code": "DE",
+      "population_millions": 83.4,
+      "source_id": "eurostat_demography_2025"
+    },
+    {
+      "country": "France",
+      "country_code": "FR",
+      "population_millions": 68.4,
+      "source_id": "eurostat_demography_2025"
+    },
+    {
+      "country": "Spain",
+      "country_code": "ES",
+      "population_millions": 48.6,
+      "source_id": "eurostat_demography_2025"
+    },
+    {
+      "country": "Netherlands",
+      "country_code": "NL",
+      "population_millions": 17.943,
+      "source_id": "cbs_population_2024"
+    },
+    {
+      "country": "Malta",
+      "country_code": "MT",
+      "population_millions": 0.563,
+      "source_id": "eurostat_demography_2025"
+    },
+    {
+      "country": "Luxembourg",
+      "country_code": "LU",
+      "population_millions": 0.672,
+      "source_id": "eurostat_demography_2025"
+    }
+  ]
+}

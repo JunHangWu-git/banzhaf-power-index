@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="640" viewBox="0 0 980 640" role="img" aria-labelledby="title desc">
+<title id="title">Population Share vs Banzhaf Power</title>
+<desc id="desc">Scatter plot for the six-country EU dual-majority mini-model. The x-axis shows population share and the y-axis shows normalized Banzhaf index.</desc>
+<rect x="0" y="0" width="100%" height="100%" fill="#f8f6f1"/>
+<text x="110" y="44" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#1f2933">Population Share vs. Banzhaf Power</text>
+<text x="110" y="70" font-family="Georgia, serif" font-size="15" fill="#3f4c5a">EU dual-majority mini-model with 6 countries, 4-state threshold, and 65% population threshold</text>
+<rect x="110" y="90" width="800" height="450" fill="#fffdf8" stroke="#d6d0c4" stroke-width="1.5"/>
+<line x1="110.00" y1="90" x2="110.00" y2="540" stroke="#e5ded1" stroke-width="1"/>
+<text x="110.00" y="568" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">0%</text>
+<line x1="310.00" y1="90" x2="310.00" y2="540" stroke="#e5ded1" stroke-width="1"/>
+<text x="310.00" y="568" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">10%</text>
+<line x1="510.00" y1="90" x2="510.00" y2="540" stroke="#e5ded1" stroke-width="1"/>
+<text x="510.00" y="568" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">20%</text>
+<line x1="710.00" y1="90" x2="710.00" y2="540" stroke="#e5ded1" stroke-width="1"/>
+<text x="710.00" y="568" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">30%</text>
+<line x1="910.00" y1="90" x2="910.00" y2="540" stroke="#e5ded1" stroke-width="1"/>
+<text x="910.00" y="568" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">40%</text>
+<line x1="110" y1="540.00" x2="910" y2="540.00" stroke="#e5ded1" stroke-width="1"/>
+<text x="94" y="544.00" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">0%</text>
+<line x1="110" y1="427.50" x2="910" y2="427.50" stroke="#e5ded1" stroke-width="1"/>
+<text x="94" y="431.50" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">10%</text>
+<line x1="110" y1="315.00" x2="910" y2="315.00" stroke="#e5ded1" stroke-width="1"/>
+<text x="94" y="319.00" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">20%</text>
+<line x1="110" y1="202.50" x2="910" y2="202.50" stroke="#e5ded1" stroke-width="1"/>
+<text x="94" y="206.50" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">30%</text>
+<line x1="110" y1="90.00" x2="910" y2="90.00" stroke="#e5ded1" stroke-width="1"/>
+<text x="94" y="94.00" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#4f5b67">40%</text>
+<line x1="110" y1="540" x2="910" y2="540" stroke="#53616f" stroke-width="2"/>
+<line x1="110" y1="90" x2="110" y2="540" stroke="#53616f" stroke-width="2"/>
+<polyline points="110.00,540.00 130.00,528.75 150.00,517.50 170.00,506.25 190.00,495.00 210.00,483.75 230.00,472.50 250.00,461.25 270.00,450.00 290.00,438.75 310.00,427.50 330.00,416.25 350.00,405.00 370.00,393.75 390.00,382.50 410.00,371.25 430.00,360.00 450.00,348.75 470.00,337.50 490.00,326.25 510.00,315.00 530.00,303.75 550.00,292.50 570.00,281.25 590.00,270.00 610.00,258.75 630.00,247.50 650.00,236.25 670.00,225.00 690.00,213.75 710.00,202.50 730.00,191.25 750.00,180.00 770.00,168.75 790.00,157.50 810.00,146.25 830.00,135.00 850.00,123.75 870.00,112.50 890.00,101.25 910.00,90.00" fill="none" stroke="#b3a58a" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="900" y="108" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#7b6f5b">equal power and population share</text>
+<line x1="869.64" y1="540" x2="869.64" y2="165.00" stroke="#1f4e79" stroke-width="2" stroke-opacity="0.4"/>
+<circle cx="869.64" cy="165.00" r="7.5" fill="#1f4e79" stroke="#fffdf8" stroke-width="2"/>
+<text x="857.64" y="155.00" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f4e79">Germany</text>
+<line x1="733.01" y1="540" x2="733.01" y2="325.71" stroke="#c84c09" stroke-width="2" stroke-opacity="0.4"/>
+<circle cx="733.01" cy="325.71" r="7.5" fill="#c84c09" stroke="#fffdf8" stroke-width="2"/>
+<text x="721.01" y="315.71" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#c84c09">France</text>
+<line x1="552.67" y1="540" x2="552.67" y2="379.29" stroke="#2a7f62" stroke-width="2" stroke-opacity="0.4"/>
+<circle cx="552.67" cy="379.29" r="7.5" fill="#2a7f62" stroke="#fffdf8" stroke-width="2"/>
+<text x="564.67" y="369.29" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#2a7f62">Spain</text>
+<line x1="273.43" y1="540" x2="273.43" y2="379.29" stroke="#8b1e3f" stroke-width="2" stroke-opacity="0.4"/>
+<circle cx="273.43" cy="379.29" r="7.5" fill="#8b1e3f" stroke="#fffdf8" stroke-width="2"/>
+<text x="285.43" y="367.29" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#8b1e3f">Netherlands</text>
+<line x1="116.12" y1="540" x2="116.12" y2="432.86" stroke="#7a6c00" stroke-width="2" stroke-opacity="0.4"/>
+<circle cx="116.12" cy="432.86" r="7.5" fill="#7a6c00" stroke="#fffdf8" stroke-width="2"/>
+<text x="128.12" y="420.86" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#7a6c00">Luxembourg</text>
+<line x1="115.13" y1="540" x2="115.13" y2="432.86" stroke="#5b4ea3" stroke-width="2" stroke-opacity="0.4"/>
+<circle cx="115.13" cy="432.86" r="7.5" fill="#5b4ea3" stroke="#fffdf8" stroke-width="2"/>
+<text x="127.13" y="420.86" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#5b4ea3">Malta</text>
+<text x="510.00" y="612" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#1f2933">Population Share</text>
+<text x="28" y="315.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#1f2933" transform="rotate(-90 28 315.00)">Normalized Banzhaf Index</text>
+<text x="110" y="632" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5f6b76">Generated from code/outputs/eu_mini_case_summary.csv</text>
+</svg>

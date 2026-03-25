@@ -18,37 +18,37 @@
 \begin{document}
 
 \title{Voting Weight vs.\ Voting Power:\\
-An Analysis of the Banzhaf Power Index in Weighted Voting Games}
+An Analysis of the Banzhaf Power Index in Weighted and Dual-Majority Voting Games}
 
 \author{
-First~Author, Second~Author, and Nick~Wu%
+Cira~Chen, Allen~Gao, and JunHang~Wu%
 \thanks{Department of Mathematics, Simon Fraser University.}%
 \thanks{Manuscript prepared for MATH 302 Project Report.}
 }
 
 \markboth{MATH 302 Project Report}%
-{Author \MakeLowercase{\textit{et al.}}: Voting Weight vs.\ Voting Power}
+{Chen \MakeLowercase{\textit{et al.}}: Voting Weight vs.\ Voting Power}
 
 \maketitle
 
 \begin{abstract}
-Weighted voting systems assign formal vote totals to participants, but those totals do not always match actual political or strategic influence. This report studies that distinction using the Banzhaf Power Index, which measures how often a player is critical in winning coalitions. We define weighted voting games, compute swing counts and normalized Banzhaf indices for several examples, and compare those values with normalized voting weights. Our case studies show that larger voting weight does not always imply proportionally larger power, that distinct players may have equal power despite unequal weights, and that quota choice can significantly alter the distribution of influence. These results illustrate that coalition structure, rather than raw weight alone, is the key determinant of voting power.
+Formal voting size does not always match actual political influence. This report studies that distinction using the Banzhaf Power Index, which measures how often a player is critical in winning coalitions. We define weighted voting games, compute exact swing counts and normalized Banzhaf indices for a four-player example, and then extend the analysis to a computational mini-model of an EU-style dual-majority voting rule. The case studies show that larger formal size does not always imply proportionally larger power, that distinct players may have equal power despite unequal weights, and that multi-condition voting rules can reshape influence in ways that raw size alone cannot predict. These results illustrate that coalition structure, rather than nominal weight alone, is the key determinant of voting power.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Banzhaf Power Index, weighted voting game, voting power, coalition, quota, critical player.
+Banzhaf Power Index, weighted voting game, dual-majority voting, voting power, coalition, critical player.
 \end{IEEEkeywords}
 
 \section{Introduction}
 \IEEEPARstart{I}{n} many collective decision systems, each voter is assigned a formal number of votes or shares. A natural first guess is that a player with more votes should also have more influence. However, weighted voting games show that this intuition can fail. In some systems, a player with a large weight may have no more effective power than another player with a smaller weight, while in other systems a player with positive weight may have no practical influence at all.
 
-This report studies the difference between \emph{voting weight} and \emph{voting power} through the Banzhaf Power Index. The central question is:
+This report studies the difference between \emph{formal voting size} and \emph{voting power} through the Banzhaf Power Index. The central question is:
 
 \begin{quote}
-To what extent does a player's assigned voting weight correspond to that player's actual influence in a weighted voting game?
+To what extent does a player's assigned weight or formal size correspond to that player's actual influence in a voting game?
 \end{quote}
 
-Our main claim is that voting weight does not, by itself, determine voting power. Instead, power depends on coalition structure and on the quota required for passage. To show this, we compute Banzhaf indices for several weighted voting games and compare them with normalized weight shares.
+Our main claim is that formal size does not, by itself, determine voting power. Instead, power depends on coalition structure and on the rule required for passage. To show this, we compute Banzhaf indices for an exact weighted voting game and for a computational dual-majority mini-model inspired by the European Union voting system.
 
 \section{Background and Definitions}
 
@@ -125,7 +125,7 @@ For each case study, we report:
 \end{enumerate}
 
 \subsection{Scope}
-This report emphasizes exact, interpretable calculations on small and medium-sized examples. A computational extension may be added for larger games, but the main focus remains transparent mathematical analysis.
+This report combines exact, interpretable hand calculations on small weighted voting games with a computational mini-model of a dual-majority rule. The main emphasis remains transparent mathematical analysis, but the computational example shows how the same ideas extend to institutional rules that cannot be handled efficiently by hand.
 
 \section{Case Study I: Game \texorpdfstring{$[10:7,6,4,1]$}{[10:7,6,4,1]}}
 
@@ -141,7 +141,6 @@ The normalized weight shares are
 \end{equation}
 
 \subsection{Coalition Table}
-% Replace with your full coalition table if required by instructor
 \begin{table}[!t]
 \caption{Coalition Analysis for $[10:7,6,4,1]$}
 \label{tab:case1_coalitions}
@@ -154,17 +153,17 @@ $\{1\}$ & 7  & Losing  & -- \\
 $\{2\}$ & 6  & Losing  & -- \\
 $\{3\}$ & 4  & Losing  & -- \\
 $\{4\}$ & 1  & Losing  & -- \\
-$\{1,2\}$ & 13 & Winning & fill in \\
-$\{1,3\}$ & 11 & Winning & fill in \\
+$\{1,2\}$ & 13 & Winning & 1, 2 \\
+$\{1,3\}$ & 11 & Winning & 1, 3 \\
 $\{1,4\}$ & 8  & Losing  & -- \\
-$\{2,3\}$ & 10 & Winning & fill in \\
+$\{2,3\}$ & 10 & Winning & 2, 3 \\
 $\{2,4\}$ & 7  & Losing  & -- \\
 $\{3,4\}$ & 5  & Losing  & -- \\
-$\{1,2,3\}$ & 17 & Winning & fill in \\
-$\{1,2,4\}$ & 14 & Winning & fill in \\
-$\{1,3,4\}$ & 12 & Winning & fill in \\
-$\{2,3,4\}$ & 11 & Winning & fill in \\
-$\{1,2,3,4\}$ & 18 & Winning & fill in \\
+$\{1,2,3\}$ & 17 & Winning & -- \\
+$\{1,2,4\}$ & 14 & Winning & 1, 2 \\
+$\{1,3,4\}$ & 12 & Winning & 1, 3 \\
+$\{2,3,4\}$ & 11 & Winning & 2, 3 \\
+$\{1,2,3,4\}$ & 18 & Winning & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -172,141 +171,72 @@ $\{1,2,3,4\}$ & 18 & Winning & fill in \\
 \subsection{Swing Count and Banzhaf Index}
 After applying the deletion test to all winning coalitions, the raw swing counts are
 \begin{equation}
-(\eta_1,\eta_2,\eta_3,\eta_4)=(\text{fill in}).
+(\eta_1,\eta_2,\eta_3,\eta_4)=(4,4,4,0).
 \end{equation}
 
 Hence the normalized Banzhaf vector is
 \begin{equation}
-(\beta_1,\beta_2,\beta_3,\beta_4)=(\text{fill in}).
+(\beta_1,\beta_2,\beta_3,\beta_4)=\left(\frac{1}{3},\frac{1}{3},\frac{1}{3},0\right).
 \end{equation}
 
 \subsection{Interpretation}
-Write 1 short paragraph here explaining:
-\begin{itemize}
-    \item whether higher weight led to higher power,
-    \item whether any players had equal power despite unequal weights,
-    \item whether any player behaved like a dummy player.
-\end{itemize}
+Case Study I shows immediately that larger weight does not imply proportionally larger power. Players 1, 2, and 3 have weights $7$, $6$, and $4$, but all three have the same normalized Banzhaf power, namely $1/3$. By contrast, Player 4 has positive weight but is never critical in any winning coalition, so Player 4 is a dummy player with zero effective power. This example already demonstrates that coalition structure, rather than nominal weight alone, determines influence.
 
-\section{Case Study II: Game \texorpdfstring{$[6:4,3,2,1]$}{[6:4,3,2,1]}}
+\section{Case Study II: EU Dual-Majority Mini-Model}
 
 \subsection{Game Setup}
-Consider the weighted voting game
+The second case study is a six-country computational mini-model inspired by the EU Council's dual-majority voting rule. Instead of a single weighted quota, a coalition is winning only if it satisfies two conditions simultaneously:
 \begin{equation}
-[6:4,3,2,1].
+\text{number of supporting states}\ge 4
+\end{equation}
+and
+\begin{equation}
+\text{population share of supporting states}\ge 0.65.
 \end{equation}
 
-The normalized weight shares are
-\begin{equation}
-\omega=\left(\frac{4}{10},\frac{3}{10},\frac{2}{10},\frac{1}{10}\right).
-\end{equation}
+The six-country sample used in this project is Germany, France, Spain, the Netherlands, Luxembourg, and Malta. This mini-model is not the full EU system; rather, it is a smaller computational analogue that preserves the same logical structure of a state threshold combined with a population threshold.
 
-\subsection{Coalition Table}
+\subsection{Computational Method}
+Because the mini-model has six players, it contains $2^6-1=63$ nonempty coalitions. We enumerate all of them with Python. For each coalition, the program checks whether both the state threshold and the population threshold are satisfied. For every winning coalition, each member is removed in turn to test whether that country is critical. This produces a raw swing count for each country and, after normalization, a Banzhaf index.
+
+\subsection{Summary Results}
 \begin{table}[!t]
-\caption{Coalition Analysis for $[6:4,3,2,1]$}
-\label{tab:case2_coalitions}
+\caption{Population Share and Banzhaf Power in the EU Mini-Model}
+\label{tab:eu_mini_summary}
 \centering
-\begin{tabular}{c c c c}
+\footnotesize
+\begin{tabular}{l c c c}
 \toprule
-Coalition & Total Weight & Winning/Losing & Critical Players \\
+Country & Population Share & Critical Count & Banzhaf Index \\
 \midrule
-$\{1\}$ & 4 & Losing  & -- \\
-$\{2\}$ & 3 & Losing  & -- \\
-$\{3\}$ & 2 & Losing  & -- \\
-$\{4\}$ & 1 & Losing  & -- \\
-$\{1,2\}$ & 7 & Winning & fill in \\
-$\{1,3\}$ & 6 & Winning & fill in \\
-$\{1,4\}$ & 5 & Losing  & -- \\
-$\{2,3\}$ & 5 & Losing  & -- \\
-$\{2,4\}$ & 4 & Losing  & -- \\
-$\{3,4\}$ & 3 & Losing  & -- \\
-$\{1,2,3\}$ & 9 & Winning & fill in \\
-$\{1,2,4\}$ & 8 & Winning & fill in \\
-$\{1,3,4\}$ & 7 & Winning & fill in \\
-$\{2,3,4\}$ & 6 & Winning & fill in \\
-$\{1,2,3,4\}$ & 10 & Winning & fill in \\
+Germany & 0.380 & 14 & 0.333 \\
+France & 0.312 & 8 & 0.190 \\
+Spain & 0.221 & 6 & 0.143 \\
+Netherlands & 0.082 & 6 & 0.143 \\
+Luxembourg & 0.003 & 4 & 0.095 \\
+Malta & 0.003 & 4 & 0.095 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Swing Count and Banzhaf Index}
-The raw swing counts are
-\begin{equation}
-(\eta_1,\eta_2,\eta_3,\eta_4)=(\text{fill in}).
-\end{equation}
-
-The normalized Banzhaf vector is
-\begin{equation}
-(\beta_1,\beta_2,\beta_3,\beta_4)=(\text{fill in}).
-\end{equation}
+\input{figures/eu_mini_population_vs_banzhaf}
 
 \subsection{Interpretation}
-Explain how the power distribution compares with the weight distribution. Comment on whether the smallest player still has meaningful influence.
-
-\section{Quota Sensitivity Analysis}
-
-\subsection{Fixed Weights, Varying Quota}
-To study the effect of quota choice, keep the same weights and vary the quota. For example, using a fixed system
-\begin{equation}
-[q:7,6,4,1],
-\end{equation}
-we compare the resulting Banzhaf indices for several values of $q$.
-
-\begin{table}[!t]
-\caption{Quota Sensitivity for Fixed Weights}
-\label{tab:quota_sensitivity}
-\centering
-\begin{tabular}{c c c c}
-\toprule
-Quota $q$ & Raw Swings $(\eta_1,\eta_2,\eta_3,\eta_4)$ & Banzhaf Vector $(\beta_i)$ & Key Observation \\
-\midrule
-8  & fill in & fill in & fill in \\
-9  & fill in & fill in & fill in \\
-10 & fill in & fill in & fill in \\
-11 & fill in & fill in & fill in \\
-12 & fill in & fill in & fill in \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Discussion}
-This section should explain how and why the quota changes the set of winning coalitions and the identity of critical players. Emphasize that power is shaped by coalition structure, not just raw voting totals.
+The EU mini-model shows that population share and voting power do not move together one-for-one. Germany remains the most powerful country because it contributes heavily to the population threshold, but the Netherlands has the same Banzhaf index as Spain despite having a much smaller population share. At the other end, Luxembourg and Malta each retain positive power because every state contributes equally toward the state-count requirement. The dual-majority rule therefore moderates pure population dominance and creates a more balanced distribution of influence than a single population-based threshold would.
 
 \section{Results and Discussion}
-This section brings the case studies together. Possible discussion points:
-\begin{enumerate}
-    \item larger weight does not guarantee proportionally larger power;
-    \item two players with different weights may have equal Banzhaf power;
-    \item some players may have zero power even if their weights are positive;
-    \item quota choice can significantly reshape the power distribution.
-\end{enumerate}
-
-You can also include a direct comparison table:
-
-\begin{table}[!t]
-\caption{Comparison of Weight Share and Banzhaf Power}
-\label{tab:comparison_summary}
-\centering
-\begin{tabular}{c c c c}
-\toprule
-Player & Weight $w_i$ & Weight Share $\omega_i$ & Banzhaf Index $\beta_i$ \\
-\midrule
-1 & fill in & fill in & fill in \\
-2 & fill in & fill in & fill in \\
-3 & fill in & fill in & fill in \\
-4 & fill in & fill in & fill in \\
-\bottomrule
-\end{tabular}
-\end{table}
+Taken together, the two case studies show that voting power is determined by coalition structure, not by formal size alone. In Case Study I, three players with unequal weights end up with exactly equal Banzhaf power, while the smallest player is a dummy. In the EU mini-model, the dual-majority rule again breaks any simple identification of size with power: large countries remain influential, but medium and small countries retain leverage because the rule rewards both population and breadth of state support. The common lesson is that actual influence depends on how winning coalitions are formed and on which players are pivotal within them.
 
 \section{Limitations}
 The Banzhaf Power Index is useful because it gives a clear combinatorial measure of influence, but it also has limitations. It assumes that all coalitions are equally plausible and does not model ideology, bargaining costs, repeated interaction, or institutional rules beyond the quota and weights. As a result, the index is best interpreted as a mathematical measure of structural voting power rather than a full sociopolitical model of decision-making.
 
 \section{Conclusion}
-This report examined the relationship between formal voting weight and actual voting power in weighted voting games. Using the Banzhaf Power Index, we found that the distribution of influence depends on criticality within coalitions rather than on assigned weight alone. The case studies showed that unequal weights may produce equal power, that positive weights may yield zero effective power, and that changing the quota can substantially alter the balance of influence. Therefore, weighted voting systems should be analyzed through coalition structure and critical-player behavior, not only through nominal vote totals.
+This report examined the relationship between formal voting weight and actual voting power in weighted voting games. Using the Banzhaf Power Index, we found that the distribution of influence depends on criticality within coalitions rather than on assigned weight alone. The case studies showed that unequal weights may produce equal power, that positive weights may yield zero effective power, and that changing the quota can substantially alter the balance of influence.
+
+Taken together, Case Study I and the EU mini-model express the same mathematical idea at two different scales. Case Study I makes the combinatorial logic fully transparent: a player matters only when that player is pivotal in a winning coalition. The EU case then shows that this principle remains true in a more realistic institutional setting, where a dual-majority rule redistributes influence by combining a population threshold with a state-count threshold. Therefore, voting systems should be analyzed through coalition structure and critical-player behavior, not only through nominal vote totals.
 
 \section*{Acknowledgment}
-Optional. You may thank your instructor, TA, or collaborators here.
+The authors acknowledge the MATH 302 instructional team for guidance on voting games and mathematical modeling.
 
 \begin{thebibliography}{00}
 
@@ -318,9 +248,6 @@ D.~S.~Felsenthal and M.~Machover, \emph{The Measurement of Voting Power: Theory 
 
 \bibitem{taylor}
 A.~D.~Taylor and W.~S.~Zwicker, \emph{Simple Games: Desirability Relations, Trading, Pseudoweightings}. Princeton, NJ, USA: Princeton Univ. Press, 1999.
-
-\bibitem{course}
-Course notes or textbook for MATH 302, if required by your instructor.
 
 \end{thebibliography}
 
