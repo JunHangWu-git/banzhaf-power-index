@@ -1,0 +1,327 @@
+\documentclass[lettersize,journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{array}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{cite}
+\usepackage{hyperref}
+
+\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore Ban-zhaf}
+
+\begin{document}
+
+\title{Voting Weight vs.\ Voting Power:\\
+An Analysis of the Banzhaf Power Index in Weighted Voting Games}
+
+\author{
+First~Author, Second~Author, and Nick~Wu%
+\thanks{Department of Mathematics, Simon Fraser University.}%
+\thanks{Manuscript prepared for MATH 302 Project Report.}
+}
+
+\markboth{MATH 302 Project Report}%
+{Author \MakeLowercase{\textit{et al.}}: Voting Weight vs.\ Voting Power}
+
+\maketitle
+
+\begin{abstract}
+Weighted voting systems assign formal vote totals to participants, but those totals do not always match actual political or strategic influence. This report studies that distinction using the Banzhaf Power Index, which measures how often a player is critical in winning coalitions. We define weighted voting games, compute swing counts and normalized Banzhaf indices for several examples, and compare those values with normalized voting weights. Our case studies show that larger voting weight does not always imply proportionally larger power, that distinct players may have equal power despite unequal weights, and that quota choice can significantly alter the distribution of influence. These results illustrate that coalition structure, rather than raw weight alone, is the key determinant of voting power.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Banzhaf Power Index, weighted voting game, voting power, coalition, quota, critical player.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\IEEEPARstart{I}{n} many collective decision systems, each voter is assigned a formal number of votes or shares. A natural first guess is that a player with more votes should also have more influence. However, weighted voting games show that this intuition can fail. In some systems, a player with a large weight may have no more effective power than another player with a smaller weight, while in other systems a player with positive weight may have no practical influence at all.
+
+This report studies the difference between \emph{voting weight} and \emph{voting power} through the Banzhaf Power Index. The central question is:
+
+\begin{quote}
+To what extent does a player's assigned voting weight correspond to that player's actual influence in a weighted voting game?
+\end{quote}
+
+Our main claim is that voting weight does not, by itself, determine voting power. Instead, power depends on coalition structure and on the quota required for passage. To show this, we compute Banzhaf indices for several weighted voting games and compare them with normalized weight shares.
+
+\section{Background and Definitions}
+
+\subsection{Weighted Voting Games}
+A weighted voting game is written in the form
+\begin{equation}
+[q:w_1,w_2,\dots,w_n],
+\end{equation}
+where $q$ is the quota required for a motion to pass and $w_i$ is the voting weight of player $i$.
+
+Let $N=\{1,2,\dots,n\}$ be the set of players. Any subset $S\subseteq N$ is called a coalition. The weight of coalition $S$ is
+\begin{equation}
+W(S)=\sum_{i\in S} w_i.
+\end{equation}
+
+A coalition $S$ is \emph{winning} if
+\begin{equation}
+W(S)\ge q,
+\end{equation}
+and \emph{losing} otherwise.
+
+\subsection{Critical Players}
+A player $i\in S$ is called \emph{critical} in a winning coalition $S$ if removing that player causes the coalition to become losing:
+\begin{equation}
+W(S)\ge q
+\quad \text{and} \quad
+W(S\setminus\{i\})<q.
+\end{equation}
+
+This deletion test is the core of the Banzhaf method.
+
+\subsection{Banzhaf Power Index}
+Let $\eta_i$ denote the number of winning coalitions in which player $i$ is critical. Then $\eta_i$ is the raw Banzhaf swing count of player $i$.
+
+The normalized Banzhaf index is
+\begin{equation}
+\beta_i=\frac{\eta_i}{\sum_{j=1}^n \eta_j}.
+\end{equation}
+
+For comparison, the normalized weight share of player $i$ is
+\begin{equation}
+\omega_i=\frac{w_i}{\sum_{j=1}^n w_j}.
+\end{equation}
+
+The quantity $\omega_i$ measures formal weight, while $\beta_i$ measures effective influence.
+
+\section{Methodology}
+
+\subsection{Coalition Enumeration}
+For each weighted voting game, we enumerate all nonempty coalitions. For every coalition, we compute its total weight and determine whether it is winning or losing. For each winning coalition, we test every member by deletion to determine whether that player is critical.
+
+The procedure is summarized below:
+\begin{verbatim}
+Select weighted voting game
+   -> list all nonempty coalitions
+   -> compute coalition weights
+   -> classify winning vs. losing
+   -> test each member by deletion
+   -> count critical occurrences eta_i
+   -> normalize to beta_i
+   -> compare beta_i with omega_i
+   -> interpret result
+\end{verbatim}
+
+\subsection{Comparison Strategy}
+For each case study, we report:
+\begin{enumerate}
+    \item the weighted voting game,
+    \item the list or summary table of coalitions,
+    \item the critical counts $\eta_i$,
+    \item the normalized Banzhaf indices $\beta_i$,
+    \item the normalized weight shares $\omega_i$, and
+    \item a short interpretation of the difference between weight and power.
+\end{enumerate}
+
+\subsection{Scope}
+This report emphasizes exact, interpretable calculations on small and medium-sized examples. A computational extension may be added for larger games, but the main focus remains transparent mathematical analysis.
+
+\section{Case Study I: Game \texorpdfstring{$[10:7,6,4,1]$}{[10:7,6,4,1]}}
+
+\subsection{Game Setup}
+Consider the weighted voting game
+\begin{equation}
+[10:7,6,4,1].
+\end{equation}
+
+The normalized weight shares are
+\begin{equation}
+\omega=\left(\frac{7}{18},\frac{6}{18},\frac{4}{18},\frac{1}{18}\right).
+\end{equation}
+
+\subsection{Coalition Table}
+% Replace with your full coalition table if required by instructor
+\begin{table}[!t]
+\caption{Coalition Analysis for $[10:7,6,4,1]$}
+\label{tab:case1_coalitions}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+Coalition & Total Weight & Winning/Losing & Critical Players \\
+\midrule
+$\{1\}$ & 7  & Losing  & -- \\
+$\{2\}$ & 6  & Losing  & -- \\
+$\{3\}$ & 4  & Losing  & -- \\
+$\{4\}$ & 1  & Losing  & -- \\
+$\{1,2\}$ & 13 & Winning & fill in \\
+$\{1,3\}$ & 11 & Winning & fill in \\
+$\{1,4\}$ & 8  & Losing  & -- \\
+$\{2,3\}$ & 10 & Winning & fill in \\
+$\{2,4\}$ & 7  & Losing  & -- \\
+$\{3,4\}$ & 5  & Losing  & -- \\
+$\{1,2,3\}$ & 17 & Winning & fill in \\
+$\{1,2,4\}$ & 14 & Winning & fill in \\
+$\{1,3,4\}$ & 12 & Winning & fill in \\
+$\{2,3,4\}$ & 11 & Winning & fill in \\
+$\{1,2,3,4\}$ & 18 & Winning & fill in \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Swing Count and Banzhaf Index}
+After applying the deletion test to all winning coalitions, the raw swing counts are
+\begin{equation}
+(\eta_1,\eta_2,\eta_3,\eta_4)=(\text{fill in}).
+\end{equation}
+
+Hence the normalized Banzhaf vector is
+\begin{equation}
+(\beta_1,\beta_2,\beta_3,\beta_4)=(\text{fill in}).
+\end{equation}
+
+\subsection{Interpretation}
+Write 1 short paragraph here explaining:
+\begin{itemize}
+    \item whether higher weight led to higher power,
+    \item whether any players had equal power despite unequal weights,
+    \item whether any player behaved like a dummy player.
+\end{itemize}
+
+\section{Case Study II: Game \texorpdfstring{$[6:4,3,2,1]$}{[6:4,3,2,1]}}
+
+\subsection{Game Setup}
+Consider the weighted voting game
+\begin{equation}
+[6:4,3,2,1].
+\end{equation}
+
+The normalized weight shares are
+\begin{equation}
+\omega=\left(\frac{4}{10},\frac{3}{10},\frac{2}{10},\frac{1}{10}\right).
+\end{equation}
+
+\subsection{Coalition Table}
+\begin{table}[!t]
+\caption{Coalition Analysis for $[6:4,3,2,1]$}
+\label{tab:case2_coalitions}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+Coalition & Total Weight & Winning/Losing & Critical Players \\
+\midrule
+$\{1\}$ & 4 & Losing  & -- \\
+$\{2\}$ & 3 & Losing  & -- \\
+$\{3\}$ & 2 & Losing  & -- \\
+$\{4\}$ & 1 & Losing  & -- \\
+$\{1,2\}$ & 7 & Winning & fill in \\
+$\{1,3\}$ & 6 & Winning & fill in \\
+$\{1,4\}$ & 5 & Losing  & -- \\
+$\{2,3\}$ & 5 & Losing  & -- \\
+$\{2,4\}$ & 4 & Losing  & -- \\
+$\{3,4\}$ & 3 & Losing  & -- \\
+$\{1,2,3\}$ & 9 & Winning & fill in \\
+$\{1,2,4\}$ & 8 & Winning & fill in \\
+$\{1,3,4\}$ & 7 & Winning & fill in \\
+$\{2,3,4\}$ & 6 & Winning & fill in \\
+$\{1,2,3,4\}$ & 10 & Winning & fill in \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Swing Count and Banzhaf Index}
+The raw swing counts are
+\begin{equation}
+(\eta_1,\eta_2,\eta_3,\eta_4)=(\text{fill in}).
+\end{equation}
+
+The normalized Banzhaf vector is
+\begin{equation}
+(\beta_1,\beta_2,\beta_3,\beta_4)=(\text{fill in}).
+\end{equation}
+
+\subsection{Interpretation}
+Explain how the power distribution compares with the weight distribution. Comment on whether the smallest player still has meaningful influence.
+
+\section{Quota Sensitivity Analysis}
+
+\subsection{Fixed Weights, Varying Quota}
+To study the effect of quota choice, keep the same weights and vary the quota. For example, using a fixed system
+\begin{equation}
+[q:7,6,4,1],
+\end{equation}
+we compare the resulting Banzhaf indices for several values of $q$.
+
+\begin{table}[!t]
+\caption{Quota Sensitivity for Fixed Weights}
+\label{tab:quota_sensitivity}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+Quota $q$ & Raw Swings $(\eta_1,\eta_2,\eta_3,\eta_4)$ & Banzhaf Vector $(\beta_i)$ & Key Observation \\
+\midrule
+8  & fill in & fill in & fill in \\
+9  & fill in & fill in & fill in \\
+10 & fill in & fill in & fill in \\
+11 & fill in & fill in & fill in \\
+12 & fill in & fill in & fill in \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Discussion}
+This section should explain how and why the quota changes the set of winning coalitions and the identity of critical players. Emphasize that power is shaped by coalition structure, not just raw voting totals.
+
+\section{Results and Discussion}
+This section brings the case studies together. Possible discussion points:
+\begin{enumerate}
+    \item larger weight does not guarantee proportionally larger power;
+    \item two players with different weights may have equal Banzhaf power;
+    \item some players may have zero power even if their weights are positive;
+    \item quota choice can significantly reshape the power distribution.
+\end{enumerate}
+
+You can also include a direct comparison table:
+
+\begin{table}[!t]
+\caption{Comparison of Weight Share and Banzhaf Power}
+\label{tab:comparison_summary}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+Player & Weight $w_i$ & Weight Share $\omega_i$ & Banzhaf Index $\beta_i$ \\
+\midrule
+1 & fill in & fill in & fill in \\
+2 & fill in & fill in & fill in \\
+3 & fill in & fill in & fill in \\
+4 & fill in & fill in & fill in \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Limitations}
+The Banzhaf Power Index is useful because it gives a clear combinatorial measure of influence, but it also has limitations. It assumes that all coalitions are equally plausible and does not model ideology, bargaining costs, repeated interaction, or institutional rules beyond the quota and weights. As a result, the index is best interpreted as a mathematical measure of structural voting power rather than a full sociopolitical model of decision-making.
+
+\section{Conclusion}
+This report examined the relationship between formal voting weight and actual voting power in weighted voting games. Using the Banzhaf Power Index, we found that the distribution of influence depends on criticality within coalitions rather than on assigned weight alone. The case studies showed that unequal weights may produce equal power, that positive weights may yield zero effective power, and that changing the quota can substantially alter the balance of influence. Therefore, weighted voting systems should be analyzed through coalition structure and critical-player behavior, not only through nominal vote totals.
+
+\section*{Acknowledgment}
+Optional. You may thank your instructor, TA, or collaborators here.
+
+\begin{thebibliography}{00}
+
+\bibitem{banzhaf}
+J.~F.~Banzhaf III, ``Weighted voting doesn't work: A mathematical analysis,'' \emph{Rutgers Law Review}, vol.~19, no.~2, pp.~317--343, 1965.
+
+\bibitem{felsenthal}
+D.~S.~Felsenthal and M.~Machover, \emph{The Measurement of Voting Power: Theory and Practice, Problems and Paradoxes}. Cheltenham, U.K.: Edward Elgar, 1998.
+
+\bibitem{taylor}
+A.~D.~Taylor and W.~S.~Zwicker, \emph{Simple Games: Desirability Relations, Trading, Pseudoweightings}. Princeton, NJ, USA: Princeton Univ. Press, 1999.
+
+\bibitem{course}
+Course notes or textbook for MATH 302, if required by your instructor.
+
+\end{thebibliography}
+
+\end{document}
