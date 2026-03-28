@@ -1,0 +1,1024 @@
+Coalition,#States,Population,Winning,Critical States
+ON,1,38.8,No,--
+QC,1,22.3,No,--
+BC,1,13.7,No,--
+AB,1,11.7,No,--
+MB,1,3.6,No,--
+SK,1,3.1,No,--
+NS,1,2.6,No,--
+NB,1,2.1,No,--
+NL,1,1.4,No,--
+PE,1,0.4,No,--
+"ON, QC",2,61.1,No,--
+"ON, BC",2,52.5,No,--
+"ON, AB",2,50.5,No,--
+"ON, MB",2,42.4,No,--
+"ON, SK",2,41.9,No,--
+"ON, NS",2,41.4,No,--
+"ON, NB",2,40.9,No,--
+"ON, NL",2,40.2,No,--
+"ON, PE",2,39.2,No,--
+"QC, BC",2,36.0,No,--
+"QC, AB",2,34.0,No,--
+"QC, MB",2,25.9,No,--
+"QC, SK",2,25.4,No,--
+"QC, NS",2,24.9,No,--
+"QC, NB",2,24.4,No,--
+"QC, NL",2,23.7,No,--
+"QC, PE",2,22.7,No,--
+"BC, AB",2,25.4,No,--
+"BC, MB",2,17.3,No,--
+"BC, SK",2,16.8,No,--
+"BC, NS",2,16.3,No,--
+"BC, NB",2,15.8,No,--
+"BC, NL",2,15.1,No,--
+"BC, PE",2,14.1,No,--
+"AB, MB",2,15.3,No,--
+"AB, SK",2,14.8,No,--
+"AB, NS",2,14.3,No,--
+"AB, NB",2,13.8,No,--
+"AB, NL",2,13.1,No,--
+"AB, PE",2,12.1,No,--
+"MB, SK",2,6.7,No,--
+"MB, NS",2,6.2,No,--
+"MB, NB",2,5.7,No,--
+"MB, NL",2,5.0,No,--
+"MB, PE",2,4.0,No,--
+"SK, NS",2,5.7,No,--
+"SK, NB",2,5.2,No,--
+"SK, NL",2,4.5,No,--
+"SK, PE",2,3.5,No,--
+"NS, NB",2,4.7,No,--
+"NS, NL",2,4.0,No,--
+"NS, PE",2,3.0,No,--
+"NB, NL",2,3.5,No,--
+"NB, PE",2,2.5,No,--
+"NL, PE",2,1.8,No,--
+"ON, QC, BC",3,74.8,No,--
+"ON, QC, AB",3,72.8,No,--
+"ON, QC, MB",3,64.7,No,--
+"ON, QC, SK",3,64.2,No,--
+"ON, QC, NS",3,63.7,No,--
+"ON, QC, NB",3,63.2,No,--
+"ON, QC, NL",3,62.5,No,--
+"ON, QC, PE",3,61.5,No,--
+"ON, BC, AB",3,64.2,No,--
+"ON, BC, MB",3,56.1,No,--
+"ON, BC, SK",3,55.6,No,--
+"ON, BC, NS",3,55.1,No,--
+"ON, BC, NB",3,54.6,No,--
+"ON, BC, NL",3,53.9,No,--
+"ON, BC, PE",3,52.9,No,--
+"ON, AB, MB",3,54.1,No,--
+"ON, AB, SK",3,53.6,No,--
+"ON, AB, NS",3,53.1,No,--
+"ON, AB, NB",3,52.6,No,--
+"ON, AB, NL",3,51.9,No,--
+"ON, AB, PE",3,50.9,No,--
+"ON, MB, SK",3,45.5,No,--
+"ON, MB, NS",3,45.0,No,--
+"ON, MB, NB",3,44.5,No,--
+"ON, MB, NL",3,43.8,No,--
+"ON, MB, PE",3,42.8,No,--
+"ON, SK, NS",3,44.5,No,--
+"ON, SK, NB",3,44.0,No,--
+"ON, SK, NL",3,43.3,No,--
+"ON, SK, PE",3,42.3,No,--
+"ON, NS, NB",3,43.5,No,--
+"ON, NS, NL",3,42.8,No,--
+"ON, NS, PE",3,41.8,No,--
+"ON, NB, NL",3,42.3,No,--
+"ON, NB, PE",3,41.3,No,--
+"ON, NL, PE",3,40.6,No,--
+"QC, BC, AB",3,47.7,No,--
+"QC, BC, MB",3,39.6,No,--
+"QC, BC, SK",3,39.1,No,--
+"QC, BC, NS",3,38.6,No,--
+"QC, BC, NB",3,38.1,No,--
+"QC, BC, NL",3,37.4,No,--
+"QC, BC, PE",3,36.4,No,--
+"QC, AB, MB",3,37.6,No,--
+"QC, AB, SK",3,37.1,No,--
+"QC, AB, NS",3,36.6,No,--
+"QC, AB, NB",3,36.1,No,--
+"QC, AB, NL",3,35.4,No,--
+"QC, AB, PE",3,34.4,No,--
+"QC, MB, SK",3,29.0,No,--
+"QC, MB, NS",3,28.5,No,--
+"QC, MB, NB",3,28.0,No,--
+"QC, MB, NL",3,27.3,No,--
+"QC, MB, PE",3,26.3,No,--
+"QC, SK, NS",3,28.0,No,--
+"QC, SK, NB",3,27.5,No,--
+"QC, SK, NL",3,26.8,No,--
+"QC, SK, PE",3,25.8,No,--
+"QC, NS, NB",3,27.0,No,--
+"QC, NS, NL",3,26.3,No,--
+"QC, NS, PE",3,25.3,No,--
+"QC, NB, NL",3,25.8,No,--
+"QC, NB, PE",3,24.8,No,--
+"QC, NL, PE",3,24.1,No,--
+"BC, AB, MB",3,29.0,No,--
+"BC, AB, SK",3,28.5,No,--
+"BC, AB, NS",3,28.0,No,--
+"BC, AB, NB",3,27.5,No,--
+"BC, AB, NL",3,26.8,No,--
+"BC, AB, PE",3,25.8,No,--
+"BC, MB, SK",3,20.4,No,--
+"BC, MB, NS",3,19.9,No,--
+"BC, MB, NB",3,19.4,No,--
+"BC, MB, NL",3,18.7,No,--
+"BC, MB, PE",3,17.7,No,--
+"BC, SK, NS",3,19.4,No,--
+"BC, SK, NB",3,18.9,No,--
+"BC, SK, NL",3,18.2,No,--
+"BC, SK, PE",3,17.2,No,--
+"BC, NS, NB",3,18.4,No,--
+"BC, NS, NL",3,17.7,No,--
+"BC, NS, PE",3,16.7,No,--
+"BC, NB, NL",3,17.2,No,--
+"BC, NB, PE",3,16.2,No,--
+"BC, NL, PE",3,15.5,No,--
+"AB, MB, SK",3,18.4,No,--
+"AB, MB, NS",3,17.9,No,--
+"AB, MB, NB",3,17.4,No,--
+"AB, MB, NL",3,16.7,No,--
+"AB, MB, PE",3,15.7,No,--
+"AB, SK, NS",3,17.4,No,--
+"AB, SK, NB",3,16.9,No,--
+"AB, SK, NL",3,16.2,No,--
+"AB, SK, PE",3,15.2,No,--
+"AB, NS, NB",3,16.4,No,--
+"AB, NS, NL",3,15.7,No,--
+"AB, NS, PE",3,14.7,No,--
+"AB, NB, NL",3,15.2,No,--
+"AB, NB, PE",3,14.2,No,--
+"AB, NL, PE",3,13.5,No,--
+"MB, SK, NS",3,9.3,No,--
+"MB, SK, NB",3,8.8,No,--
+"MB, SK, NL",3,8.1,No,--
+"MB, SK, PE",3,7.1,No,--
+"MB, NS, NB",3,8.3,No,--
+"MB, NS, NL",3,7.6,No,--
+"MB, NS, PE",3,6.6,No,--
+"MB, NB, NL",3,7.1,No,--
+"MB, NB, PE",3,6.1,No,--
+"MB, NL, PE",3,5.4,No,--
+"SK, NS, NB",3,7.8,No,--
+"SK, NS, NL",3,7.1,No,--
+"SK, NS, PE",3,6.1,No,--
+"SK, NB, NL",3,6.6,No,--
+"SK, NB, PE",3,5.6,No,--
+"SK, NL, PE",3,4.9,No,--
+"NS, NB, NL",3,6.1,No,--
+"NS, NB, PE",3,5.1,No,--
+"NS, NL, PE",3,4.4,No,--
+"NB, NL, PE",3,3.9,No,--
+"ON, QC, BC, AB",4,86.5,No,--
+"ON, QC, BC, MB",4,78.4,No,--
+"ON, QC, BC, SK",4,77.9,No,--
+"ON, QC, BC, NS",4,77.4,No,--
+"ON, QC, BC, NB",4,76.9,No,--
+"ON, QC, BC, NL",4,76.2,No,--
+"ON, QC, BC, PE",4,75.2,No,--
+"ON, QC, AB, MB",4,76.4,No,--
+"ON, QC, AB, SK",4,75.9,No,--
+"ON, QC, AB, NS",4,75.4,No,--
+"ON, QC, AB, NB",4,74.9,No,--
+"ON, QC, AB, NL",4,74.2,No,--
+"ON, QC, AB, PE",4,73.2,No,--
+"ON, QC, MB, SK",4,67.8,No,--
+"ON, QC, MB, NS",4,67.3,No,--
+"ON, QC, MB, NB",4,66.8,No,--
+"ON, QC, MB, NL",4,66.1,No,--
+"ON, QC, MB, PE",4,65.1,No,--
+"ON, QC, SK, NS",4,66.8,No,--
+"ON, QC, SK, NB",4,66.3,No,--
+"ON, QC, SK, NL",4,65.6,No,--
+"ON, QC, SK, PE",4,64.6,No,--
+"ON, QC, NS, NB",4,65.8,No,--
+"ON, QC, NS, NL",4,65.1,No,--
+"ON, QC, NS, PE",4,64.1,No,--
+"ON, QC, NB, NL",4,64.6,No,--
+"ON, QC, NB, PE",4,63.6,No,--
+"ON, QC, NL, PE",4,62.9,No,--
+"ON, BC, AB, MB",4,67.8,No,--
+"ON, BC, AB, SK",4,67.3,No,--
+"ON, BC, AB, NS",4,66.8,No,--
+"ON, BC, AB, NB",4,66.3,No,--
+"ON, BC, AB, NL",4,65.6,No,--
+"ON, BC, AB, PE",4,64.6,No,--
+"ON, BC, MB, SK",4,59.2,No,--
+"ON, BC, MB, NS",4,58.7,No,--
+"ON, BC, MB, NB",4,58.2,No,--
+"ON, BC, MB, NL",4,57.5,No,--
+"ON, BC, MB, PE",4,56.5,No,--
+"ON, BC, SK, NS",4,58.2,No,--
+"ON, BC, SK, NB",4,57.7,No,--
+"ON, BC, SK, NL",4,57.0,No,--
+"ON, BC, SK, PE",4,56.0,No,--
+"ON, BC, NS, NB",4,57.2,No,--
+"ON, BC, NS, NL",4,56.5,No,--
+"ON, BC, NS, PE",4,55.5,No,--
+"ON, BC, NB, NL",4,56.0,No,--
+"ON, BC, NB, PE",4,55.0,No,--
+"ON, BC, NL, PE",4,54.3,No,--
+"ON, AB, MB, SK",4,57.2,No,--
+"ON, AB, MB, NS",4,56.7,No,--
+"ON, AB, MB, NB",4,56.2,No,--
+"ON, AB, MB, NL",4,55.5,No,--
+"ON, AB, MB, PE",4,54.5,No,--
+"ON, AB, SK, NS",4,56.2,No,--
+"ON, AB, SK, NB",4,55.7,No,--
+"ON, AB, SK, NL",4,55.0,No,--
+"ON, AB, SK, PE",4,54.0,No,--
+"ON, AB, NS, NB",4,55.2,No,--
+"ON, AB, NS, NL",4,54.5,No,--
+"ON, AB, NS, PE",4,53.5,No,--
+"ON, AB, NB, NL",4,54.0,No,--
+"ON, AB, NB, PE",4,53.0,No,--
+"ON, AB, NL, PE",4,52.3,No,--
+"ON, MB, SK, NS",4,48.1,No,--
+"ON, MB, SK, NB",4,47.6,No,--
+"ON, MB, SK, NL",4,46.9,No,--
+"ON, MB, SK, PE",4,45.9,No,--
+"ON, MB, NS, NB",4,47.1,No,--
+"ON, MB, NS, NL",4,46.4,No,--
+"ON, MB, NS, PE",4,45.4,No,--
+"ON, MB, NB, NL",4,45.9,No,--
+"ON, MB, NB, PE",4,44.9,No,--
+"ON, MB, NL, PE",4,44.2,No,--
+"ON, SK, NS, NB",4,46.6,No,--
+"ON, SK, NS, NL",4,45.9,No,--
+"ON, SK, NS, PE",4,44.9,No,--
+"ON, SK, NB, NL",4,45.4,No,--
+"ON, SK, NB, PE",4,44.4,No,--
+"ON, SK, NL, PE",4,43.7,No,--
+"ON, NS, NB, NL",4,44.9,No,--
+"ON, NS, NB, PE",4,43.9,No,--
+"ON, NS, NL, PE",4,43.2,No,--
+"ON, NB, NL, PE",4,42.7,No,--
+"QC, BC, AB, MB",4,51.3,No,--
+"QC, BC, AB, SK",4,50.8,No,--
+"QC, BC, AB, NS",4,50.3,No,--
+"QC, BC, AB, NB",4,49.8,No,--
+"QC, BC, AB, NL",4,49.1,No,--
+"QC, BC, AB, PE",4,48.1,No,--
+"QC, BC, MB, SK",4,42.7,No,--
+"QC, BC, MB, NS",4,42.2,No,--
+"QC, BC, MB, NB",4,41.7,No,--
+"QC, BC, MB, NL",4,41.0,No,--
+"QC, BC, MB, PE",4,40.0,No,--
+"QC, BC, SK, NS",4,41.7,No,--
+"QC, BC, SK, NB",4,41.2,No,--
+"QC, BC, SK, NL",4,40.5,No,--
+"QC, BC, SK, PE",4,39.5,No,--
+"QC, BC, NS, NB",4,40.7,No,--
+"QC, BC, NS, NL",4,40.0,No,--
+"QC, BC, NS, PE",4,39.0,No,--
+"QC, BC, NB, NL",4,39.5,No,--
+"QC, BC, NB, PE",4,38.5,No,--
+"QC, BC, NL, PE",4,37.8,No,--
+"QC, AB, MB, SK",4,40.7,No,--
+"QC, AB, MB, NS",4,40.2,No,--
+"QC, AB, MB, NB",4,39.7,No,--
+"QC, AB, MB, NL",4,39.0,No,--
+"QC, AB, MB, PE",4,38.0,No,--
+"QC, AB, SK, NS",4,39.7,No,--
+"QC, AB, SK, NB",4,39.2,No,--
+"QC, AB, SK, NL",4,38.5,No,--
+"QC, AB, SK, PE",4,37.5,No,--
+"QC, AB, NS, NB",4,38.7,No,--
+"QC, AB, NS, NL",4,38.0,No,--
+"QC, AB, NS, PE",4,37.0,No,--
+"QC, AB, NB, NL",4,37.5,No,--
+"QC, AB, NB, PE",4,36.5,No,--
+"QC, AB, NL, PE",4,35.8,No,--
+"QC, MB, SK, NS",4,31.6,No,--
+"QC, MB, SK, NB",4,31.1,No,--
+"QC, MB, SK, NL",4,30.4,No,--
+"QC, MB, SK, PE",4,29.4,No,--
+"QC, MB, NS, NB",4,30.6,No,--
+"QC, MB, NS, NL",4,29.9,No,--
+"QC, MB, NS, PE",4,28.9,No,--
+"QC, MB, NB, NL",4,29.4,No,--
+"QC, MB, NB, PE",4,28.4,No,--
+"QC, MB, NL, PE",4,27.7,No,--
+"QC, SK, NS, NB",4,30.1,No,--
+"QC, SK, NS, NL",4,29.4,No,--
+"QC, SK, NS, PE",4,28.4,No,--
+"QC, SK, NB, NL",4,28.9,No,--
+"QC, SK, NB, PE",4,27.9,No,--
+"QC, SK, NL, PE",4,27.2,No,--
+"QC, NS, NB, NL",4,28.4,No,--
+"QC, NS, NB, PE",4,27.4,No,--
+"QC, NS, NL, PE",4,26.7,No,--
+"QC, NB, NL, PE",4,26.2,No,--
+"BC, AB, MB, SK",4,32.1,No,--
+"BC, AB, MB, NS",4,31.6,No,--
+"BC, AB, MB, NB",4,31.1,No,--
+"BC, AB, MB, NL",4,30.4,No,--
+"BC, AB, MB, PE",4,29.4,No,--
+"BC, AB, SK, NS",4,31.1,No,--
+"BC, AB, SK, NB",4,30.6,No,--
+"BC, AB, SK, NL",4,29.9,No,--
+"BC, AB, SK, PE",4,28.9,No,--
+"BC, AB, NS, NB",4,30.1,No,--
+"BC, AB, NS, NL",4,29.4,No,--
+"BC, AB, NS, PE",4,28.4,No,--
+"BC, AB, NB, NL",4,28.9,No,--
+"BC, AB, NB, PE",4,27.9,No,--
+"BC, AB, NL, PE",4,27.2,No,--
+"BC, MB, SK, NS",4,23.0,No,--
+"BC, MB, SK, NB",4,22.5,No,--
+"BC, MB, SK, NL",4,21.8,No,--
+"BC, MB, SK, PE",4,20.8,No,--
+"BC, MB, NS, NB",4,22.0,No,--
+"BC, MB, NS, NL",4,21.3,No,--
+"BC, MB, NS, PE",4,20.3,No,--
+"BC, MB, NB, NL",4,20.8,No,--
+"BC, MB, NB, PE",4,19.8,No,--
+"BC, MB, NL, PE",4,19.1,No,--
+"BC, SK, NS, NB",4,21.5,No,--
+"BC, SK, NS, NL",4,20.8,No,--
+"BC, SK, NS, PE",4,19.8,No,--
+"BC, SK, NB, NL",4,20.3,No,--
+"BC, SK, NB, PE",4,19.3,No,--
+"BC, SK, NL, PE",4,18.6,No,--
+"BC, NS, NB, NL",4,19.8,No,--
+"BC, NS, NB, PE",4,18.8,No,--
+"BC, NS, NL, PE",4,18.1,No,--
+"BC, NB, NL, PE",4,17.6,No,--
+"AB, MB, SK, NS",4,21.0,No,--
+"AB, MB, SK, NB",4,20.5,No,--
+"AB, MB, SK, NL",4,19.8,No,--
+"AB, MB, SK, PE",4,18.8,No,--
+"AB, MB, NS, NB",4,20.0,No,--
+"AB, MB, NS, NL",4,19.3,No,--
+"AB, MB, NS, PE",4,18.3,No,--
+"AB, MB, NB, NL",4,18.8,No,--
+"AB, MB, NB, PE",4,17.8,No,--
+"AB, MB, NL, PE",4,17.1,No,--
+"AB, SK, NS, NB",4,19.5,No,--
+"AB, SK, NS, NL",4,18.8,No,--
+"AB, SK, NS, PE",4,17.8,No,--
+"AB, SK, NB, NL",4,18.3,No,--
+"AB, SK, NB, PE",4,17.3,No,--
+"AB, SK, NL, PE",4,16.6,No,--
+"AB, NS, NB, NL",4,17.8,No,--
+"AB, NS, NB, PE",4,16.8,No,--
+"AB, NS, NL, PE",4,16.1,No,--
+"AB, NB, NL, PE",4,15.6,No,--
+"MB, SK, NS, NB",4,11.4,No,--
+"MB, SK, NS, NL",4,10.7,No,--
+"MB, SK, NS, PE",4,9.7,No,--
+"MB, SK, NB, NL",4,10.2,No,--
+"MB, SK, NB, PE",4,9.2,No,--
+"MB, SK, NL, PE",4,8.5,No,--
+"MB, NS, NB, NL",4,9.7,No,--
+"MB, NS, NB, PE",4,8.7,No,--
+"MB, NS, NL, PE",4,8.0,No,--
+"MB, NB, NL, PE",4,7.5,No,--
+"SK, NS, NB, NL",4,9.2,No,--
+"SK, NS, NB, PE",4,8.2,No,--
+"SK, NS, NL, PE",4,7.5,No,--
+"SK, NB, NL, PE",4,7.0,No,--
+"NS, NB, NL, PE",4,6.5,No,--
+"ON, QC, BC, AB, MB",5,90.1,No,--
+"ON, QC, BC, AB, SK",5,89.6,No,--
+"ON, QC, BC, AB, NS",5,89.1,No,--
+"ON, QC, BC, AB, NB",5,88.6,No,--
+"ON, QC, BC, AB, NL",5,87.9,No,--
+"ON, QC, BC, AB, PE",5,86.9,No,--
+"ON, QC, BC, MB, SK",5,81.5,No,--
+"ON, QC, BC, MB, NS",5,81.0,No,--
+"ON, QC, BC, MB, NB",5,80.5,No,--
+"ON, QC, BC, MB, NL",5,79.8,No,--
+"ON, QC, BC, MB, PE",5,78.8,No,--
+"ON, QC, BC, SK, NS",5,80.5,No,--
+"ON, QC, BC, SK, NB",5,80.0,No,--
+"ON, QC, BC, SK, NL",5,79.3,No,--
+"ON, QC, BC, SK, PE",5,78.3,No,--
+"ON, QC, BC, NS, NB",5,79.5,No,--
+"ON, QC, BC, NS, NL",5,78.8,No,--
+"ON, QC, BC, NS, PE",5,77.8,No,--
+"ON, QC, BC, NB, NL",5,78.3,No,--
+"ON, QC, BC, NB, PE",5,77.3,No,--
+"ON, QC, BC, NL, PE",5,76.6,No,--
+"ON, QC, AB, MB, SK",5,79.5,No,--
+"ON, QC, AB, MB, NS",5,79.0,No,--
+"ON, QC, AB, MB, NB",5,78.5,No,--
+"ON, QC, AB, MB, NL",5,77.8,No,--
+"ON, QC, AB, MB, PE",5,76.8,No,--
+"ON, QC, AB, SK, NS",5,78.5,No,--
+"ON, QC, AB, SK, NB",5,78.0,No,--
+"ON, QC, AB, SK, NL",5,77.3,No,--
+"ON, QC, AB, SK, PE",5,76.3,No,--
+"ON, QC, AB, NS, NB",5,77.5,No,--
+"ON, QC, AB, NS, NL",5,76.8,No,--
+"ON, QC, AB, NS, PE",5,75.8,No,--
+"ON, QC, AB, NB, NL",5,76.3,No,--
+"ON, QC, AB, NB, PE",5,75.3,No,--
+"ON, QC, AB, NL, PE",5,74.6,No,--
+"ON, QC, MB, SK, NS",5,70.4,No,--
+"ON, QC, MB, SK, NB",5,69.9,No,--
+"ON, QC, MB, SK, NL",5,69.2,No,--
+"ON, QC, MB, SK, PE",5,68.2,No,--
+"ON, QC, MB, NS, NB",5,69.4,No,--
+"ON, QC, MB, NS, NL",5,68.7,No,--
+"ON, QC, MB, NS, PE",5,67.7,No,--
+"ON, QC, MB, NB, NL",5,68.2,No,--
+"ON, QC, MB, NB, PE",5,67.2,No,--
+"ON, QC, MB, NL, PE",5,66.5,No,--
+"ON, QC, SK, NS, NB",5,68.9,No,--
+"ON, QC, SK, NS, NL",5,68.2,No,--
+"ON, QC, SK, NS, PE",5,67.2,No,--
+"ON, QC, SK, NB, NL",5,67.7,No,--
+"ON, QC, SK, NB, PE",5,66.7,No,--
+"ON, QC, SK, NL, PE",5,66.0,No,--
+"ON, QC, NS, NB, NL",5,67.2,No,--
+"ON, QC, NS, NB, PE",5,66.2,No,--
+"ON, QC, NS, NL, PE",5,65.5,No,--
+"ON, QC, NB, NL, PE",5,65.0,No,--
+"ON, BC, AB, MB, SK",5,70.9,No,--
+"ON, BC, AB, MB, NS",5,70.4,No,--
+"ON, BC, AB, MB, NB",5,69.9,No,--
+"ON, BC, AB, MB, NL",5,69.2,No,--
+"ON, BC, AB, MB, PE",5,68.2,No,--
+"ON, BC, AB, SK, NS",5,69.9,No,--
+"ON, BC, AB, SK, NB",5,69.4,No,--
+"ON, BC, AB, SK, NL",5,68.7,No,--
+"ON, BC, AB, SK, PE",5,67.7,No,--
+"ON, BC, AB, NS, NB",5,68.9,No,--
+"ON, BC, AB, NS, NL",5,68.2,No,--
+"ON, BC, AB, NS, PE",5,67.2,No,--
+"ON, BC, AB, NB, NL",5,67.7,No,--
+"ON, BC, AB, NB, PE",5,66.7,No,--
+"ON, BC, AB, NL, PE",5,66.0,No,--
+"ON, BC, MB, SK, NS",5,61.8,No,--
+"ON, BC, MB, SK, NB",5,61.3,No,--
+"ON, BC, MB, SK, NL",5,60.6,No,--
+"ON, BC, MB, SK, PE",5,59.6,No,--
+"ON, BC, MB, NS, NB",5,60.8,No,--
+"ON, BC, MB, NS, NL",5,60.1,No,--
+"ON, BC, MB, NS, PE",5,59.1,No,--
+"ON, BC, MB, NB, NL",5,59.6,No,--
+"ON, BC, MB, NB, PE",5,58.6,No,--
+"ON, BC, MB, NL, PE",5,57.9,No,--
+"ON, BC, SK, NS, NB",5,60.3,No,--
+"ON, BC, SK, NS, NL",5,59.6,No,--
+"ON, BC, SK, NS, PE",5,58.6,No,--
+"ON, BC, SK, NB, NL",5,59.1,No,--
+"ON, BC, SK, NB, PE",5,58.1,No,--
+"ON, BC, SK, NL, PE",5,57.4,No,--
+"ON, BC, NS, NB, NL",5,58.6,No,--
+"ON, BC, NS, NB, PE",5,57.6,No,--
+"ON, BC, NS, NL, PE",5,56.9,No,--
+"ON, BC, NB, NL, PE",5,56.4,No,--
+"ON, AB, MB, SK, NS",5,59.8,No,--
+"ON, AB, MB, SK, NB",5,59.3,No,--
+"ON, AB, MB, SK, NL",5,58.6,No,--
+"ON, AB, MB, SK, PE",5,57.6,No,--
+"ON, AB, MB, NS, NB",5,58.8,No,--
+"ON, AB, MB, NS, NL",5,58.1,No,--
+"ON, AB, MB, NS, PE",5,57.1,No,--
+"ON, AB, MB, NB, NL",5,57.6,No,--
+"ON, AB, MB, NB, PE",5,56.6,No,--
+"ON, AB, MB, NL, PE",5,55.9,No,--
+"ON, AB, SK, NS, NB",5,58.3,No,--
+"ON, AB, SK, NS, NL",5,57.6,No,--
+"ON, AB, SK, NS, PE",5,56.6,No,--
+"ON, AB, SK, NB, NL",5,57.1,No,--
+"ON, AB, SK, NB, PE",5,56.1,No,--
+"ON, AB, SK, NL, PE",5,55.4,No,--
+"ON, AB, NS, NB, NL",5,56.6,No,--
+"ON, AB, NS, NB, PE",5,55.6,No,--
+"ON, AB, NS, NL, PE",5,54.9,No,--
+"ON, AB, NB, NL, PE",5,54.4,No,--
+"ON, MB, SK, NS, NB",5,50.2,No,--
+"ON, MB, SK, NS, NL",5,49.5,No,--
+"ON, MB, SK, NS, PE",5,48.5,No,--
+"ON, MB, SK, NB, NL",5,49.0,No,--
+"ON, MB, SK, NB, PE",5,48.0,No,--
+"ON, MB, SK, NL, PE",5,47.3,No,--
+"ON, MB, NS, NB, NL",5,48.5,No,--
+"ON, MB, NS, NB, PE",5,47.5,No,--
+"ON, MB, NS, NL, PE",5,46.8,No,--
+"ON, MB, NB, NL, PE",5,46.3,No,--
+"ON, SK, NS, NB, NL",5,48.0,No,--
+"ON, SK, NS, NB, PE",5,47.0,No,--
+"ON, SK, NS, NL, PE",5,46.3,No,--
+"ON, SK, NB, NL, PE",5,45.8,No,--
+"ON, NS, NB, NL, PE",5,45.3,No,--
+"QC, BC, AB, MB, SK",5,54.4,No,--
+"QC, BC, AB, MB, NS",5,53.9,No,--
+"QC, BC, AB, MB, NB",5,53.4,No,--
+"QC, BC, AB, MB, NL",5,52.7,No,--
+"QC, BC, AB, MB, PE",5,51.7,No,--
+"QC, BC, AB, SK, NS",5,53.4,No,--
+"QC, BC, AB, SK, NB",5,52.9,No,--
+"QC, BC, AB, SK, NL",5,52.2,No,--
+"QC, BC, AB, SK, PE",5,51.2,No,--
+"QC, BC, AB, NS, NB",5,52.4,No,--
+"QC, BC, AB, NS, NL",5,51.7,No,--
+"QC, BC, AB, NS, PE",5,50.7,No,--
+"QC, BC, AB, NB, NL",5,51.2,No,--
+"QC, BC, AB, NB, PE",5,50.2,No,--
+"QC, BC, AB, NL, PE",5,49.5,No,--
+"QC, BC, MB, SK, NS",5,45.3,No,--
+"QC, BC, MB, SK, NB",5,44.8,No,--
+"QC, BC, MB, SK, NL",5,44.1,No,--
+"QC, BC, MB, SK, PE",5,43.1,No,--
+"QC, BC, MB, NS, NB",5,44.3,No,--
+"QC, BC, MB, NS, NL",5,43.6,No,--
+"QC, BC, MB, NS, PE",5,42.6,No,--
+"QC, BC, MB, NB, NL",5,43.1,No,--
+"QC, BC, MB, NB, PE",5,42.1,No,--
+"QC, BC, MB, NL, PE",5,41.4,No,--
+"QC, BC, SK, NS, NB",5,43.8,No,--
+"QC, BC, SK, NS, NL",5,43.1,No,--
+"QC, BC, SK, NS, PE",5,42.1,No,--
+"QC, BC, SK, NB, NL",5,42.6,No,--
+"QC, BC, SK, NB, PE",5,41.6,No,--
+"QC, BC, SK, NL, PE",5,40.9,No,--
+"QC, BC, NS, NB, NL",5,42.1,No,--
+"QC, BC, NS, NB, PE",5,41.1,No,--
+"QC, BC, NS, NL, PE",5,40.4,No,--
+"QC, BC, NB, NL, PE",5,39.9,No,--
+"QC, AB, MB, SK, NS",5,43.3,No,--
+"QC, AB, MB, SK, NB",5,42.8,No,--
+"QC, AB, MB, SK, NL",5,42.1,No,--
+"QC, AB, MB, SK, PE",5,41.1,No,--
+"QC, AB, MB, NS, NB",5,42.3,No,--
+"QC, AB, MB, NS, NL",5,41.6,No,--
+"QC, AB, MB, NS, PE",5,40.6,No,--
+"QC, AB, MB, NB, NL",5,41.1,No,--
+"QC, AB, MB, NB, PE",5,40.1,No,--
+"QC, AB, MB, NL, PE",5,39.4,No,--
+"QC, AB, SK, NS, NB",5,41.8,No,--
+"QC, AB, SK, NS, NL",5,41.1,No,--
+"QC, AB, SK, NS, PE",5,40.1,No,--
+"QC, AB, SK, NB, NL",5,40.6,No,--
+"QC, AB, SK, NB, PE",5,39.6,No,--
+"QC, AB, SK, NL, PE",5,38.9,No,--
+"QC, AB, NS, NB, NL",5,40.1,No,--
+"QC, AB, NS, NB, PE",5,39.1,No,--
+"QC, AB, NS, NL, PE",5,38.4,No,--
+"QC, AB, NB, NL, PE",5,37.9,No,--
+"QC, MB, SK, NS, NB",5,33.7,No,--
+"QC, MB, SK, NS, NL",5,33.0,No,--
+"QC, MB, SK, NS, PE",5,32.0,No,--
+"QC, MB, SK, NB, NL",5,32.5,No,--
+"QC, MB, SK, NB, PE",5,31.5,No,--
+"QC, MB, SK, NL, PE",5,30.8,No,--
+"QC, MB, NS, NB, NL",5,32.0,No,--
+"QC, MB, NS, NB, PE",5,31.0,No,--
+"QC, MB, NS, NL, PE",5,30.3,No,--
+"QC, MB, NB, NL, PE",5,29.8,No,--
+"QC, SK, NS, NB, NL",5,31.5,No,--
+"QC, SK, NS, NB, PE",5,30.5,No,--
+"QC, SK, NS, NL, PE",5,29.8,No,--
+"QC, SK, NB, NL, PE",5,29.3,No,--
+"QC, NS, NB, NL, PE",5,28.8,No,--
+"BC, AB, MB, SK, NS",5,34.7,No,--
+"BC, AB, MB, SK, NB",5,34.2,No,--
+"BC, AB, MB, SK, NL",5,33.5,No,--
+"BC, AB, MB, SK, PE",5,32.5,No,--
+"BC, AB, MB, NS, NB",5,33.7,No,--
+"BC, AB, MB, NS, NL",5,33.0,No,--
+"BC, AB, MB, NS, PE",5,32.0,No,--
+"BC, AB, MB, NB, NL",5,32.5,No,--
+"BC, AB, MB, NB, PE",5,31.5,No,--
+"BC, AB, MB, NL, PE",5,30.8,No,--
+"BC, AB, SK, NS, NB",5,33.2,No,--
+"BC, AB, SK, NS, NL",5,32.5,No,--
+"BC, AB, SK, NS, PE",5,31.5,No,--
+"BC, AB, SK, NB, NL",5,32.0,No,--
+"BC, AB, SK, NB, PE",5,31.0,No,--
+"BC, AB, SK, NL, PE",5,30.3,No,--
+"BC, AB, NS, NB, NL",5,31.5,No,--
+"BC, AB, NS, NB, PE",5,30.5,No,--
+"BC, AB, NS, NL, PE",5,29.8,No,--
+"BC, AB, NB, NL, PE",5,29.3,No,--
+"BC, MB, SK, NS, NB",5,25.1,No,--
+"BC, MB, SK, NS, NL",5,24.4,No,--
+"BC, MB, SK, NS, PE",5,23.4,No,--
+"BC, MB, SK, NB, NL",5,23.9,No,--
+"BC, MB, SK, NB, PE",5,22.9,No,--
+"BC, MB, SK, NL, PE",5,22.2,No,--
+"BC, MB, NS, NB, NL",5,23.4,No,--
+"BC, MB, NS, NB, PE",5,22.4,No,--
+"BC, MB, NS, NL, PE",5,21.7,No,--
+"BC, MB, NB, NL, PE",5,21.2,No,--
+"BC, SK, NS, NB, NL",5,22.9,No,--
+"BC, SK, NS, NB, PE",5,21.9,No,--
+"BC, SK, NS, NL, PE",5,21.2,No,--
+"BC, SK, NB, NL, PE",5,20.7,No,--
+"BC, NS, NB, NL, PE",5,20.2,No,--
+"AB, MB, SK, NS, NB",5,23.1,No,--
+"AB, MB, SK, NS, NL",5,22.4,No,--
+"AB, MB, SK, NS, PE",5,21.4,No,--
+"AB, MB, SK, NB, NL",5,21.9,No,--
+"AB, MB, SK, NB, PE",5,20.9,No,--
+"AB, MB, SK, NL, PE",5,20.2,No,--
+"AB, MB, NS, NB, NL",5,21.4,No,--
+"AB, MB, NS, NB, PE",5,20.4,No,--
+"AB, MB, NS, NL, PE",5,19.7,No,--
+"AB, MB, NB, NL, PE",5,19.2,No,--
+"AB, SK, NS, NB, NL",5,20.9,No,--
+"AB, SK, NS, NB, PE",5,19.9,No,--
+"AB, SK, NS, NL, PE",5,19.2,No,--
+"AB, SK, NB, NL, PE",5,18.7,No,--
+"AB, NS, NB, NL, PE",5,18.2,No,--
+"MB, SK, NS, NB, NL",5,12.8,No,--
+"MB, SK, NS, NB, PE",5,11.8,No,--
+"MB, SK, NS, NL, PE",5,11.1,No,--
+"MB, SK, NB, NL, PE",5,10.6,No,--
+"MB, NS, NB, NL, PE",5,10.1,No,--
+"SK, NS, NB, NL, PE",5,9.6,No,--
+"ON, QC, BC, AB, MB, SK",6,93.2,No,--
+"ON, QC, BC, AB, MB, NS",6,92.7,No,--
+"ON, QC, BC, AB, MB, NB",6,92.2,No,--
+"ON, QC, BC, AB, MB, NL",6,91.5,No,--
+"ON, QC, BC, AB, MB, PE",6,90.5,No,--
+"ON, QC, BC, AB, SK, NS",6,92.2,No,--
+"ON, QC, BC, AB, SK, NB",6,91.7,No,--
+"ON, QC, BC, AB, SK, NL",6,91.0,No,--
+"ON, QC, BC, AB, SK, PE",6,90.0,No,--
+"ON, QC, BC, AB, NS, NB",6,91.2,No,--
+"ON, QC, BC, AB, NS, NL",6,90.5,No,--
+"ON, QC, BC, AB, NS, PE",6,89.5,No,--
+"ON, QC, BC, AB, NB, NL",6,90.0,No,--
+"ON, QC, BC, AB, NB, PE",6,89.0,No,--
+"ON, QC, BC, AB, NL, PE",6,88.3,No,--
+"ON, QC, BC, MB, SK, NS",6,84.1,No,--
+"ON, QC, BC, MB, SK, NB",6,83.6,No,--
+"ON, QC, BC, MB, SK, NL",6,82.9,No,--
+"ON, QC, BC, MB, SK, PE",6,81.9,No,--
+"ON, QC, BC, MB, NS, NB",6,83.1,No,--
+"ON, QC, BC, MB, NS, NL",6,82.4,No,--
+"ON, QC, BC, MB, NS, PE",6,81.4,No,--
+"ON, QC, BC, MB, NB, NL",6,81.9,No,--
+"ON, QC, BC, MB, NB, PE",6,80.9,No,--
+"ON, QC, BC, MB, NL, PE",6,80.2,No,--
+"ON, QC, BC, SK, NS, NB",6,82.6,No,--
+"ON, QC, BC, SK, NS, NL",6,81.9,No,--
+"ON, QC, BC, SK, NS, PE",6,80.9,No,--
+"ON, QC, BC, SK, NB, NL",6,81.4,No,--
+"ON, QC, BC, SK, NB, PE",6,80.4,No,--
+"ON, QC, BC, SK, NL, PE",6,79.7,No,--
+"ON, QC, BC, NS, NB, NL",6,80.9,No,--
+"ON, QC, BC, NS, NB, PE",6,79.9,No,--
+"ON, QC, BC, NS, NL, PE",6,79.2,No,--
+"ON, QC, BC, NB, NL, PE",6,78.7,No,--
+"ON, QC, AB, MB, SK, NS",6,82.1,No,--
+"ON, QC, AB, MB, SK, NB",6,81.6,No,--
+"ON, QC, AB, MB, SK, NL",6,80.9,No,--
+"ON, QC, AB, MB, SK, PE",6,79.9,No,--
+"ON, QC, AB, MB, NS, NB",6,81.1,No,--
+"ON, QC, AB, MB, NS, NL",6,80.4,No,--
+"ON, QC, AB, MB, NS, PE",6,79.4,No,--
+"ON, QC, AB, MB, NB, NL",6,79.9,No,--
+"ON, QC, AB, MB, NB, PE",6,78.9,No,--
+"ON, QC, AB, MB, NL, PE",6,78.2,No,--
+"ON, QC, AB, SK, NS, NB",6,80.6,No,--
+"ON, QC, AB, SK, NS, NL",6,79.9,No,--
+"ON, QC, AB, SK, NS, PE",6,78.9,No,--
+"ON, QC, AB, SK, NB, NL",6,79.4,No,--
+"ON, QC, AB, SK, NB, PE",6,78.4,No,--
+"ON, QC, AB, SK, NL, PE",6,77.7,No,--
+"ON, QC, AB, NS, NB, NL",6,78.9,No,--
+"ON, QC, AB, NS, NB, PE",6,77.9,No,--
+"ON, QC, AB, NS, NL, PE",6,77.2,No,--
+"ON, QC, AB, NB, NL, PE",6,76.7,No,--
+"ON, QC, MB, SK, NS, NB",6,72.5,No,--
+"ON, QC, MB, SK, NS, NL",6,71.8,No,--
+"ON, QC, MB, SK, NS, PE",6,70.8,No,--
+"ON, QC, MB, SK, NB, NL",6,71.3,No,--
+"ON, QC, MB, SK, NB, PE",6,70.3,No,--
+"ON, QC, MB, SK, NL, PE",6,69.6,No,--
+"ON, QC, MB, NS, NB, NL",6,70.8,No,--
+"ON, QC, MB, NS, NB, PE",6,69.8,No,--
+"ON, QC, MB, NS, NL, PE",6,69.1,No,--
+"ON, QC, MB, NB, NL, PE",6,68.6,No,--
+"ON, QC, SK, NS, NB, NL",6,70.3,No,--
+"ON, QC, SK, NS, NB, PE",6,69.3,No,--
+"ON, QC, SK, NS, NL, PE",6,68.6,No,--
+"ON, QC, SK, NB, NL, PE",6,68.1,No,--
+"ON, QC, NS, NB, NL, PE",6,67.6,No,--
+"ON, BC, AB, MB, SK, NS",6,73.5,No,--
+"ON, BC, AB, MB, SK, NB",6,73.0,No,--
+"ON, BC, AB, MB, SK, NL",6,72.3,No,--
+"ON, BC, AB, MB, SK, PE",6,71.3,No,--
+"ON, BC, AB, MB, NS, NB",6,72.5,No,--
+"ON, BC, AB, MB, NS, NL",6,71.8,No,--
+"ON, BC, AB, MB, NS, PE",6,70.8,No,--
+"ON, BC, AB, MB, NB, NL",6,71.3,No,--
+"ON, BC, AB, MB, NB, PE",6,70.3,No,--
+"ON, BC, AB, MB, NL, PE",6,69.6,No,--
+"ON, BC, AB, SK, NS, NB",6,72.0,No,--
+"ON, BC, AB, SK, NS, NL",6,71.3,No,--
+"ON, BC, AB, SK, NS, PE",6,70.3,No,--
+"ON, BC, AB, SK, NB, NL",6,70.8,No,--
+"ON, BC, AB, SK, NB, PE",6,69.8,No,--
+"ON, BC, AB, SK, NL, PE",6,69.1,No,--
+"ON, BC, AB, NS, NB, NL",6,70.3,No,--
+"ON, BC, AB, NS, NB, PE",6,69.3,No,--
+"ON, BC, AB, NS, NL, PE",6,68.6,No,--
+"ON, BC, AB, NB, NL, PE",6,68.1,No,--
+"ON, BC, MB, SK, NS, NB",6,63.9,No,--
+"ON, BC, MB, SK, NS, NL",6,63.2,No,--
+"ON, BC, MB, SK, NS, PE",6,62.2,No,--
+"ON, BC, MB, SK, NB, NL",6,62.7,No,--
+"ON, BC, MB, SK, NB, PE",6,61.7,No,--
+"ON, BC, MB, SK, NL, PE",6,61.0,No,--
+"ON, BC, MB, NS, NB, NL",6,62.2,No,--
+"ON, BC, MB, NS, NB, PE",6,61.2,No,--
+"ON, BC, MB, NS, NL, PE",6,60.5,No,--
+"ON, BC, MB, NB, NL, PE",6,60.0,No,--
+"ON, BC, SK, NS, NB, NL",6,61.7,No,--
+"ON, BC, SK, NS, NB, PE",6,60.7,No,--
+"ON, BC, SK, NS, NL, PE",6,60.0,No,--
+"ON, BC, SK, NB, NL, PE",6,59.5,No,--
+"ON, BC, NS, NB, NL, PE",6,59.0,No,--
+"ON, AB, MB, SK, NS, NB",6,61.9,No,--
+"ON, AB, MB, SK, NS, NL",6,61.2,No,--
+"ON, AB, MB, SK, NS, PE",6,60.2,No,--
+"ON, AB, MB, SK, NB, NL",6,60.7,No,--
+"ON, AB, MB, SK, NB, PE",6,59.7,No,--
+"ON, AB, MB, SK, NL, PE",6,59.0,No,--
+"ON, AB, MB, NS, NB, NL",6,60.2,No,--
+"ON, AB, MB, NS, NB, PE",6,59.2,No,--
+"ON, AB, MB, NS, NL, PE",6,58.5,No,--
+"ON, AB, MB, NB, NL, PE",6,58.0,No,--
+"ON, AB, SK, NS, NB, NL",6,59.7,No,--
+"ON, AB, SK, NS, NB, PE",6,58.7,No,--
+"ON, AB, SK, NS, NL, PE",6,58.0,No,--
+"ON, AB, SK, NB, NL, PE",6,57.5,No,--
+"ON, AB, NS, NB, NL, PE",6,57.0,No,--
+"ON, MB, SK, NS, NB, NL",6,51.6,No,--
+"ON, MB, SK, NS, NB, PE",6,50.6,No,--
+"ON, MB, SK, NS, NL, PE",6,49.9,No,--
+"ON, MB, SK, NB, NL, PE",6,49.4,No,--
+"ON, MB, NS, NB, NL, PE",6,48.9,No,--
+"ON, SK, NS, NB, NL, PE",6,48.4,No,--
+"QC, BC, AB, MB, SK, NS",6,57.0,No,--
+"QC, BC, AB, MB, SK, NB",6,56.5,No,--
+"QC, BC, AB, MB, SK, NL",6,55.8,No,--
+"QC, BC, AB, MB, SK, PE",6,54.8,No,--
+"QC, BC, AB, MB, NS, NB",6,56.0,No,--
+"QC, BC, AB, MB, NS, NL",6,55.3,No,--
+"QC, BC, AB, MB, NS, PE",6,54.3,No,--
+"QC, BC, AB, MB, NB, NL",6,54.8,No,--
+"QC, BC, AB, MB, NB, PE",6,53.8,No,--
+"QC, BC, AB, MB, NL, PE",6,53.1,No,--
+"QC, BC, AB, SK, NS, NB",6,55.5,No,--
+"QC, BC, AB, SK, NS, NL",6,54.8,No,--
+"QC, BC, AB, SK, NS, PE",6,53.8,No,--
+"QC, BC, AB, SK, NB, NL",6,54.3,No,--
+"QC, BC, AB, SK, NB, PE",6,53.3,No,--
+"QC, BC, AB, SK, NL, PE",6,52.6,No,--
+"QC, BC, AB, NS, NB, NL",6,53.8,No,--
+"QC, BC, AB, NS, NB, PE",6,52.8,No,--
+"QC, BC, AB, NS, NL, PE",6,52.1,No,--
+"QC, BC, AB, NB, NL, PE",6,51.6,No,--
+"QC, BC, MB, SK, NS, NB",6,47.4,No,--
+"QC, BC, MB, SK, NS, NL",6,46.7,No,--
+"QC, BC, MB, SK, NS, PE",6,45.7,No,--
+"QC, BC, MB, SK, NB, NL",6,46.2,No,--
+"QC, BC, MB, SK, NB, PE",6,45.2,No,--
+"QC, BC, MB, SK, NL, PE",6,44.5,No,--
+"QC, BC, MB, NS, NB, NL",6,45.7,No,--
+"QC, BC, MB, NS, NB, PE",6,44.7,No,--
+"QC, BC, MB, NS, NL, PE",6,44.0,No,--
+"QC, BC, MB, NB, NL, PE",6,43.5,No,--
+"QC, BC, SK, NS, NB, NL",6,45.2,No,--
+"QC, BC, SK, NS, NB, PE",6,44.2,No,--
+"QC, BC, SK, NS, NL, PE",6,43.5,No,--
+"QC, BC, SK, NB, NL, PE",6,43.0,No,--
+"QC, BC, NS, NB, NL, PE",6,42.5,No,--
+"QC, AB, MB, SK, NS, NB",6,45.4,No,--
+"QC, AB, MB, SK, NS, NL",6,44.7,No,--
+"QC, AB, MB, SK, NS, PE",6,43.7,No,--
+"QC, AB, MB, SK, NB, NL",6,44.2,No,--
+"QC, AB, MB, SK, NB, PE",6,43.2,No,--
+"QC, AB, MB, SK, NL, PE",6,42.5,No,--
+"QC, AB, MB, NS, NB, NL",6,43.7,No,--
+"QC, AB, MB, NS, NB, PE",6,42.7,No,--
+"QC, AB, MB, NS, NL, PE",6,42.0,No,--
+"QC, AB, MB, NB, NL, PE",6,41.5,No,--
+"QC, AB, SK, NS, NB, NL",6,43.2,No,--
+"QC, AB, SK, NS, NB, PE",6,42.2,No,--
+"QC, AB, SK, NS, NL, PE",6,41.5,No,--
+"QC, AB, SK, NB, NL, PE",6,41.0,No,--
+"QC, AB, NS, NB, NL, PE",6,40.5,No,--
+"QC, MB, SK, NS, NB, NL",6,35.1,No,--
+"QC, MB, SK, NS, NB, PE",6,34.1,No,--
+"QC, MB, SK, NS, NL, PE",6,33.4,No,--
+"QC, MB, SK, NB, NL, PE",6,32.9,No,--
+"QC, MB, NS, NB, NL, PE",6,32.4,No,--
+"QC, SK, NS, NB, NL, PE",6,31.9,No,--
+"BC, AB, MB, SK, NS, NB",6,36.8,No,--
+"BC, AB, MB, SK, NS, NL",6,36.1,No,--
+"BC, AB, MB, SK, NS, PE",6,35.1,No,--
+"BC, AB, MB, SK, NB, NL",6,35.6,No,--
+"BC, AB, MB, SK, NB, PE",6,34.6,No,--
+"BC, AB, MB, SK, NL, PE",6,33.9,No,--
+"BC, AB, MB, NS, NB, NL",6,35.1,No,--
+"BC, AB, MB, NS, NB, PE",6,34.1,No,--
+"BC, AB, MB, NS, NL, PE",6,33.4,No,--
+"BC, AB, MB, NB, NL, PE",6,32.9,No,--
+"BC, AB, SK, NS, NB, NL",6,34.6,No,--
+"BC, AB, SK, NS, NB, PE",6,33.6,No,--
+"BC, AB, SK, NS, NL, PE",6,32.9,No,--
+"BC, AB, SK, NB, NL, PE",6,32.4,No,--
+"BC, AB, NS, NB, NL, PE",6,31.9,No,--
+"BC, MB, SK, NS, NB, NL",6,26.5,No,--
+"BC, MB, SK, NS, NB, PE",6,25.5,No,--
+"BC, MB, SK, NS, NL, PE",6,24.8,No,--
+"BC, MB, SK, NB, NL, PE",6,24.3,No,--
+"BC, MB, NS, NB, NL, PE",6,23.8,No,--
+"BC, SK, NS, NB, NL, PE",6,23.3,No,--
+"AB, MB, SK, NS, NB, NL",6,24.5,No,--
+"AB, MB, SK, NS, NB, PE",6,23.5,No,--
+"AB, MB, SK, NS, NL, PE",6,22.8,No,--
+"AB, MB, SK, NB, NL, PE",6,22.3,No,--
+"AB, MB, NS, NB, NL, PE",6,21.8,No,--
+"AB, SK, NS, NB, NL, PE",6,21.3,No,--
+"MB, SK, NS, NB, NL, PE",6,13.2,No,--
+"ON, QC, BC, AB, MB, SK, NS",7,95.8,Yes,"ON, QC, BC, AB, MB, SK, NS"
+"ON, QC, BC, AB, MB, SK, NB",7,95.3,Yes,"ON, QC, BC, AB, MB, SK, NB"
+"ON, QC, BC, AB, MB, SK, NL",7,94.6,Yes,"ON, QC, BC, AB, MB, SK, NL"
+"ON, QC, BC, AB, MB, SK, PE",7,93.6,Yes,"ON, QC, BC, AB, MB, SK, PE"
+"ON, QC, BC, AB, MB, NS, NB",7,94.8,Yes,"ON, QC, BC, AB, MB, NS, NB"
+"ON, QC, BC, AB, MB, NS, NL",7,94.1,Yes,"ON, QC, BC, AB, MB, NS, NL"
+"ON, QC, BC, AB, MB, NS, PE",7,93.1,Yes,"ON, QC, BC, AB, MB, NS, PE"
+"ON, QC, BC, AB, MB, NB, NL",7,93.6,Yes,"ON, QC, BC, AB, MB, NB, NL"
+"ON, QC, BC, AB, MB, NB, PE",7,92.6,Yes,"ON, QC, BC, AB, MB, NB, PE"
+"ON, QC, BC, AB, MB, NL, PE",7,91.9,Yes,"ON, QC, BC, AB, MB, NL, PE"
+"ON, QC, BC, AB, SK, NS, NB",7,94.3,Yes,"ON, QC, BC, AB, SK, NS, NB"
+"ON, QC, BC, AB, SK, NS, NL",7,93.6,Yes,"ON, QC, BC, AB, SK, NS, NL"
+"ON, QC, BC, AB, SK, NS, PE",7,92.6,Yes,"ON, QC, BC, AB, SK, NS, PE"
+"ON, QC, BC, AB, SK, NB, NL",7,93.1,Yes,"ON, QC, BC, AB, SK, NB, NL"
+"ON, QC, BC, AB, SK, NB, PE",7,92.1,Yes,"ON, QC, BC, AB, SK, NB, PE"
+"ON, QC, BC, AB, SK, NL, PE",7,91.4,Yes,"ON, QC, BC, AB, SK, NL, PE"
+"ON, QC, BC, AB, NS, NB, NL",7,92.6,Yes,"ON, QC, BC, AB, NS, NB, NL"
+"ON, QC, BC, AB, NS, NB, PE",7,91.6,Yes,"ON, QC, BC, AB, NS, NB, PE"
+"ON, QC, BC, AB, NS, NL, PE",7,90.9,Yes,"ON, QC, BC, AB, NS, NL, PE"
+"ON, QC, BC, AB, NB, NL, PE",7,90.4,Yes,"ON, QC, BC, AB, NB, NL, PE"
+"ON, QC, BC, MB, SK, NS, NB",7,86.2,Yes,"ON, QC, BC, MB, SK, NS, NB"
+"ON, QC, BC, MB, SK, NS, NL",7,85.5,Yes,"ON, QC, BC, MB, SK, NS, NL"
+"ON, QC, BC, MB, SK, NS, PE",7,84.5,Yes,"ON, QC, BC, MB, SK, NS, PE"
+"ON, QC, BC, MB, SK, NB, NL",7,85.0,Yes,"ON, QC, BC, MB, SK, NB, NL"
+"ON, QC, BC, MB, SK, NB, PE",7,84.0,Yes,"ON, QC, BC, MB, SK, NB, PE"
+"ON, QC, BC, MB, SK, NL, PE",7,83.3,Yes,"ON, QC, BC, MB, SK, NL, PE"
+"ON, QC, BC, MB, NS, NB, NL",7,84.5,Yes,"ON, QC, BC, MB, NS, NB, NL"
+"ON, QC, BC, MB, NS, NB, PE",7,83.5,Yes,"ON, QC, BC, MB, NS, NB, PE"
+"ON, QC, BC, MB, NS, NL, PE",7,82.8,Yes,"ON, QC, BC, MB, NS, NL, PE"
+"ON, QC, BC, MB, NB, NL, PE",7,82.3,Yes,"ON, QC, BC, MB, NB, NL, PE"
+"ON, QC, BC, SK, NS, NB, NL",7,84.0,Yes,"ON, QC, BC, SK, NS, NB, NL"
+"ON, QC, BC, SK, NS, NB, PE",7,83.0,Yes,"ON, QC, BC, SK, NS, NB, PE"
+"ON, QC, BC, SK, NS, NL, PE",7,82.3,Yes,"ON, QC, BC, SK, NS, NL, PE"
+"ON, QC, BC, SK, NB, NL, PE",7,81.8,Yes,"ON, QC, BC, SK, NB, NL, PE"
+"ON, QC, BC, NS, NB, NL, PE",7,81.3,Yes,"ON, QC, BC, NS, NB, NL, PE"
+"ON, QC, AB, MB, SK, NS, NB",7,84.2,Yes,"ON, QC, AB, MB, SK, NS, NB"
+"ON, QC, AB, MB, SK, NS, NL",7,83.5,Yes,"ON, QC, AB, MB, SK, NS, NL"
+"ON, QC, AB, MB, SK, NS, PE",7,82.5,Yes,"ON, QC, AB, MB, SK, NS, PE"
+"ON, QC, AB, MB, SK, NB, NL",7,83.0,Yes,"ON, QC, AB, MB, SK, NB, NL"
+"ON, QC, AB, MB, SK, NB, PE",7,82.0,Yes,"ON, QC, AB, MB, SK, NB, PE"
+"ON, QC, AB, MB, SK, NL, PE",7,81.3,Yes,"ON, QC, AB, MB, SK, NL, PE"
+"ON, QC, AB, MB, NS, NB, NL",7,82.5,Yes,"ON, QC, AB, MB, NS, NB, NL"
+"ON, QC, AB, MB, NS, NB, PE",7,81.5,Yes,"ON, QC, AB, MB, NS, NB, PE"
+"ON, QC, AB, MB, NS, NL, PE",7,80.8,Yes,"ON, QC, AB, MB, NS, NL, PE"
+"ON, QC, AB, MB, NB, NL, PE",7,80.3,Yes,"ON, QC, AB, MB, NB, NL, PE"
+"ON, QC, AB, SK, NS, NB, NL",7,82.0,Yes,"ON, QC, AB, SK, NS, NB, NL"
+"ON, QC, AB, SK, NS, NB, PE",7,81.0,Yes,"ON, QC, AB, SK, NS, NB, PE"
+"ON, QC, AB, SK, NS, NL, PE",7,80.3,Yes,"ON, QC, AB, SK, NS, NL, PE"
+"ON, QC, AB, SK, NB, NL, PE",7,79.8,Yes,"ON, QC, AB, SK, NB, NL, PE"
+"ON, QC, AB, NS, NB, NL, PE",7,79.3,Yes,"ON, QC, AB, NS, NB, NL, PE"
+"ON, QC, MB, SK, NS, NB, NL",7,73.9,Yes,"ON, QC, MB, SK, NS, NB, NL"
+"ON, QC, MB, SK, NS, NB, PE",7,72.9,Yes,"ON, QC, MB, SK, NS, NB, PE"
+"ON, QC, MB, SK, NS, NL, PE",7,72.2,Yes,"ON, QC, MB, SK, NS, NL, PE"
+"ON, QC, MB, SK, NB, NL, PE",7,71.7,Yes,"ON, QC, MB, SK, NB, NL, PE"
+"ON, QC, MB, NS, NB, NL, PE",7,71.2,Yes,"ON, QC, MB, NS, NB, NL, PE"
+"ON, QC, SK, NS, NB, NL, PE",7,70.7,Yes,"ON, QC, SK, NS, NB, NL, PE"
+"ON, BC, AB, MB, SK, NS, NB",7,75.6,Yes,"ON, BC, AB, MB, SK, NS, NB"
+"ON, BC, AB, MB, SK, NS, NL",7,74.9,Yes,"ON, BC, AB, MB, SK, NS, NL"
+"ON, BC, AB, MB, SK, NS, PE",7,73.9,Yes,"ON, BC, AB, MB, SK, NS, PE"
+"ON, BC, AB, MB, SK, NB, NL",7,74.4,Yes,"ON, BC, AB, MB, SK, NB, NL"
+"ON, BC, AB, MB, SK, NB, PE",7,73.4,Yes,"ON, BC, AB, MB, SK, NB, PE"
+"ON, BC, AB, MB, SK, NL, PE",7,72.7,Yes,"ON, BC, AB, MB, SK, NL, PE"
+"ON, BC, AB, MB, NS, NB, NL",7,73.9,Yes,"ON, BC, AB, MB, NS, NB, NL"
+"ON, BC, AB, MB, NS, NB, PE",7,72.9,Yes,"ON, BC, AB, MB, NS, NB, PE"
+"ON, BC, AB, MB, NS, NL, PE",7,72.2,Yes,"ON, BC, AB, MB, NS, NL, PE"
+"ON, BC, AB, MB, NB, NL, PE",7,71.7,Yes,"ON, BC, AB, MB, NB, NL, PE"
+"ON, BC, AB, SK, NS, NB, NL",7,73.4,Yes,"ON, BC, AB, SK, NS, NB, NL"
+"ON, BC, AB, SK, NS, NB, PE",7,72.4,Yes,"ON, BC, AB, SK, NS, NB, PE"
+"ON, BC, AB, SK, NS, NL, PE",7,71.7,Yes,"ON, BC, AB, SK, NS, NL, PE"
+"ON, BC, AB, SK, NB, NL, PE",7,71.2,Yes,"ON, BC, AB, SK, NB, NL, PE"
+"ON, BC, AB, NS, NB, NL, PE",7,70.7,Yes,"ON, BC, AB, NS, NB, NL, PE"
+"ON, BC, MB, SK, NS, NB, NL",7,65.3,Yes,"ON, BC, MB, SK, NS, NB, NL"
+"ON, BC, MB, SK, NS, NB, PE",7,64.3,Yes,"ON, BC, MB, SK, NS, NB, PE"
+"ON, BC, MB, SK, NS, NL, PE",7,63.6,Yes,"ON, BC, MB, SK, NS, NL, PE"
+"ON, BC, MB, SK, NB, NL, PE",7,63.1,Yes,"ON, BC, MB, SK, NB, NL, PE"
+"ON, BC, MB, NS, NB, NL, PE",7,62.6,Yes,"ON, BC, MB, NS, NB, NL, PE"
+"ON, BC, SK, NS, NB, NL, PE",7,62.1,Yes,"ON, BC, SK, NS, NB, NL, PE"
+"ON, AB, MB, SK, NS, NB, NL",7,63.3,Yes,"ON, AB, MB, SK, NS, NB, NL"
+"ON, AB, MB, SK, NS, NB, PE",7,62.3,Yes,"ON, AB, MB, SK, NS, NB, PE"
+"ON, AB, MB, SK, NS, NL, PE",7,61.6,Yes,"ON, AB, MB, SK, NS, NL, PE"
+"ON, AB, MB, SK, NB, NL, PE",7,61.1,Yes,"ON, AB, MB, SK, NB, NL, PE"
+"ON, AB, MB, NS, NB, NL, PE",7,60.6,Yes,"ON, AB, MB, NS, NB, NL, PE"
+"ON, AB, SK, NS, NB, NL, PE",7,60.1,Yes,"ON, AB, SK, NS, NB, NL, PE"
+"ON, MB, SK, NS, NB, NL, PE",7,52.0,Yes,"ON, MB, SK, NS, NB, NL, PE"
+"QC, BC, AB, MB, SK, NS, NB",7,59.1,Yes,"QC, BC, AB, MB, SK, NS, NB"
+"QC, BC, AB, MB, SK, NS, NL",7,58.4,Yes,"QC, BC, AB, MB, SK, NS, NL"
+"QC, BC, AB, MB, SK, NS, PE",7,57.4,Yes,"QC, BC, AB, MB, SK, NS, PE"
+"QC, BC, AB, MB, SK, NB, NL",7,57.9,Yes,"QC, BC, AB, MB, SK, NB, NL"
+"QC, BC, AB, MB, SK, NB, PE",7,56.9,Yes,"QC, BC, AB, MB, SK, NB, PE"
+"QC, BC, AB, MB, SK, NL, PE",7,56.2,Yes,"QC, BC, AB, MB, SK, NL, PE"
+"QC, BC, AB, MB, NS, NB, NL",7,57.4,Yes,"QC, BC, AB, MB, NS, NB, NL"
+"QC, BC, AB, MB, NS, NB, PE",7,56.4,Yes,"QC, BC, AB, MB, NS, NB, PE"
+"QC, BC, AB, MB, NS, NL, PE",7,55.7,Yes,"QC, BC, AB, MB, NS, NL, PE"
+"QC, BC, AB, MB, NB, NL, PE",7,55.2,Yes,"QC, BC, AB, MB, NB, NL, PE"
+"QC, BC, AB, SK, NS, NB, NL",7,56.9,Yes,"QC, BC, AB, SK, NS, NB, NL"
+"QC, BC, AB, SK, NS, NB, PE",7,55.9,Yes,"QC, BC, AB, SK, NS, NB, PE"
+"QC, BC, AB, SK, NS, NL, PE",7,55.2,Yes,"QC, BC, AB, SK, NS, NL, PE"
+"QC, BC, AB, SK, NB, NL, PE",7,54.7,Yes,"QC, BC, AB, SK, NB, NL, PE"
+"QC, BC, AB, NS, NB, NL, PE",7,54.2,Yes,"QC, BC, AB, NS, NB, NL, PE"
+"QC, BC, MB, SK, NS, NB, NL",7,48.8,No,--
+"QC, BC, MB, SK, NS, NB, PE",7,47.8,No,--
+"QC, BC, MB, SK, NS, NL, PE",7,47.1,No,--
+"QC, BC, MB, SK, NB, NL, PE",7,46.6,No,--
+"QC, BC, MB, NS, NB, NL, PE",7,46.1,No,--
+"QC, BC, SK, NS, NB, NL, PE",7,45.6,No,--
+"QC, AB, MB, SK, NS, NB, NL",7,46.8,No,--
+"QC, AB, MB, SK, NS, NB, PE",7,45.8,No,--
+"QC, AB, MB, SK, NS, NL, PE",7,45.1,No,--
+"QC, AB, MB, SK, NB, NL, PE",7,44.6,No,--
+"QC, AB, MB, NS, NB, NL, PE",7,44.1,No,--
+"QC, AB, SK, NS, NB, NL, PE",7,43.6,No,--
+"QC, MB, SK, NS, NB, NL, PE",7,35.5,No,--
+"BC, AB, MB, SK, NS, NB, NL",7,38.2,No,--
+"BC, AB, MB, SK, NS, NB, PE",7,37.2,No,--
+"BC, AB, MB, SK, NS, NL, PE",7,36.5,No,--
+"BC, AB, MB, SK, NB, NL, PE",7,36.0,No,--
+"BC, AB, MB, NS, NB, NL, PE",7,35.5,No,--
+"BC, AB, SK, NS, NB, NL, PE",7,35.0,No,--
+"BC, MB, SK, NS, NB, NL, PE",7,26.9,No,--
+"AB, MB, SK, NS, NB, NL, PE",7,24.9,No,--
+"ON, QC, BC, AB, MB, SK, NS, NB",8,97.9,Yes,--
+"ON, QC, BC, AB, MB, SK, NS, NL",8,97.2,Yes,--
+"ON, QC, BC, AB, MB, SK, NS, PE",8,96.2,Yes,--
+"ON, QC, BC, AB, MB, SK, NB, NL",8,96.7,Yes,--
+"ON, QC, BC, AB, MB, SK, NB, PE",8,95.7,Yes,--
+"ON, QC, BC, AB, MB, SK, NL, PE",8,95.0,Yes,--
+"ON, QC, BC, AB, MB, NS, NB, NL",8,96.2,Yes,--
+"ON, QC, BC, AB, MB, NS, NB, PE",8,95.2,Yes,--
+"ON, QC, BC, AB, MB, NS, NL, PE",8,94.5,Yes,--
+"ON, QC, BC, AB, MB, NB, NL, PE",8,94.0,Yes,--
+"ON, QC, BC, AB, SK, NS, NB, NL",8,95.7,Yes,--
+"ON, QC, BC, AB, SK, NS, NB, PE",8,94.7,Yes,--
+"ON, QC, BC, AB, SK, NS, NL, PE",8,94.0,Yes,--
+"ON, QC, BC, AB, SK, NB, NL, PE",8,93.5,Yes,--
+"ON, QC, BC, AB, NS, NB, NL, PE",8,93.0,Yes,--
+"ON, QC, BC, MB, SK, NS, NB, NL",8,87.6,Yes,ON
+"ON, QC, BC, MB, SK, NS, NB, PE",8,86.6,Yes,ON
+"ON, QC, BC, MB, SK, NS, NL, PE",8,85.9,Yes,ON
+"ON, QC, BC, MB, SK, NB, NL, PE",8,85.4,Yes,ON
+"ON, QC, BC, MB, NS, NB, NL, PE",8,84.9,Yes,ON
+"ON, QC, BC, SK, NS, NB, NL, PE",8,84.4,Yes,ON
+"ON, QC, AB, MB, SK, NS, NB, NL",8,85.6,Yes,ON
+"ON, QC, AB, MB, SK, NS, NB, PE",8,84.6,Yes,ON
+"ON, QC, AB, MB, SK, NS, NL, PE",8,83.9,Yes,ON
+"ON, QC, AB, MB, SK, NB, NL, PE",8,83.4,Yes,ON
+"ON, QC, AB, MB, NS, NB, NL, PE",8,82.9,Yes,ON
+"ON, QC, AB, SK, NS, NB, NL, PE",8,82.4,Yes,ON
+"ON, QC, MB, SK, NS, NB, NL, PE",8,74.3,Yes,ON
+"ON, BC, AB, MB, SK, NS, NB, NL",8,77.0,Yes,ON
+"ON, BC, AB, MB, SK, NS, NB, PE",8,76.0,Yes,ON
+"ON, BC, AB, MB, SK, NS, NL, PE",8,75.3,Yes,ON
+"ON, BC, AB, MB, SK, NB, NL, PE",8,74.8,Yes,ON
+"ON, BC, AB, MB, NS, NB, NL, PE",8,74.3,Yes,ON
+"ON, BC, AB, SK, NS, NB, NL, PE",8,73.8,Yes,ON
+"ON, BC, MB, SK, NS, NB, NL, PE",8,65.7,Yes,ON
+"ON, AB, MB, SK, NS, NB, NL, PE",8,63.7,Yes,ON
+"QC, BC, AB, MB, SK, NS, NB, NL",8,60.5,Yes,"QC, BC, AB"
+"QC, BC, AB, MB, SK, NS, NB, PE",8,59.5,Yes,"QC, BC, AB"
+"QC, BC, AB, MB, SK, NS, NL, PE",8,58.8,Yes,"QC, BC, AB"
+"QC, BC, AB, MB, SK, NB, NL, PE",8,58.3,Yes,"QC, BC, AB"
+"QC, BC, AB, MB, NS, NB, NL, PE",8,57.8,Yes,"QC, BC, AB"
+"QC, BC, AB, SK, NS, NB, NL, PE",8,57.3,Yes,"QC, BC, AB"
+"QC, BC, MB, SK, NS, NB, NL, PE",8,49.2,No,--
+"QC, AB, MB, SK, NS, NB, NL, PE",8,47.2,No,--
+"BC, AB, MB, SK, NS, NB, NL, PE",8,38.6,No,--
+"ON, QC, BC, AB, MB, SK, NS, NB, NL",9,99.3,Yes,--
+"ON, QC, BC, AB, MB, SK, NS, NB, PE",9,98.3,Yes,--
+"ON, QC, BC, AB, MB, SK, NS, NL, PE",9,97.6,Yes,--
+"ON, QC, BC, AB, MB, SK, NB, NL, PE",9,97.1,Yes,--
+"ON, QC, BC, AB, MB, NS, NB, NL, PE",9,96.6,Yes,--
+"ON, QC, BC, AB, SK, NS, NB, NL, PE",9,96.1,Yes,--
+"ON, QC, BC, MB, SK, NS, NB, NL, PE",9,88.0,Yes,ON
+"ON, QC, AB, MB, SK, NS, NB, NL, PE",9,86.0,Yes,ON
+"ON, BC, AB, MB, SK, NS, NB, NL, PE",9,77.4,Yes,ON
+"QC, BC, AB, MB, SK, NS, NB, NL, PE",9,60.9,Yes,"QC, BC, AB"
+"ON, QC, BC, AB, MB, SK, NS, NB, NL, PE",10,99.7,Yes,--
