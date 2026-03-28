@@ -1,17 +1,21 @@
 \documentclass[lettersize,journal]{IEEEtran}
 
-\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
 \usepackage{array}
-\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
 \usepackage{textcomp}
 \usepackage{stfloats}
 \usepackage{url}
-\usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{cite}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{observation}{Observation}
 
 \hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore Ban-zhaf}
 
@@ -20,19 +24,16 @@
 \title{Voting Weight vs.\ Voting Power:\\
 An Analysis of the Banzhaf Power Index in Weighted and Dual-Majority Voting Games}
 
-\author{
-Cira~Chen, Allen~Gao, and JunHang~Wu%
+\author{Cira~Chen, Allen~Gao, and JunHang~Wu%
 \thanks{Department of Mathematics, Simon Fraser University.}%
-\thanks{Manuscript prepared for MATH 302 Project Report.}
-}
+\thanks{Manuscript prepared for MATH 302 Project Report.}}
 
-\markboth{MATH 302 Project Report}%
-{Chen \MakeLowercase{\textit{et al.}}: Voting Weight vs.\ Voting Power}
+\markboth{MATH 302 Project Report}{Chen \MakeLowercase{\textit{et al.}}: Voting Weight vs. Voting Power}
 
 \maketitle
 
 \begin{abstract}
-Formal voting size does not always match actual political influence. This report studies that distinction using the Banzhaf Power Index, which measures how often a player is critical in winning coalitions. We define weighted voting games, compute exact swing counts and normalized Banzhaf indices for a four-player example, and then extend the analysis to a computational mini-model of an EU-style dual-majority voting rule. The case studies show that larger formal size does not always imply proportionally larger power, that distinct players may have equal power despite unequal weights, and that multi-condition voting rules can reshape influence in ways that raw size alone cannot predict. These results illustrate that coalition structure, rather than nominal weight alone, is the key determinant of voting power.
+Weighted voting systems assign unequal formal weights, but those weights do not necessarily match actual influence. This report uses the Banzhaf Power Index to study that difference in both a standard weighted voting game and a dual-majority voting system. We first analyze the game $[10:7,6,4,1]$ to show that unequal weights can yield equal power and that a player with positive weight can still have zero effective influence. We then model the Canadian Constitutional Amending Formula as a dual-threshold game requiring both population support and provincial breadth. The results show that coalition structure and quota design, rather than nominal size alone, determine effective power.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -40,203 +41,341 @@ Banzhaf Power Index, weighted voting game, dual-majority voting, voting power, c
 \end{IEEEkeywords}
 
 \section{Introduction}
-\IEEEPARstart{I}{n} many collective decision systems, each voter is assigned a formal number of votes or shares. A natural first guess is that a player with more votes should also have more influence. However, weighted voting games show that this intuition can fail. In some systems, a player with a large weight may have no more effective power than another player with a smaller weight, while in other systems a player with positive weight may have no practical influence at all.
+\IEEEPARstart{I}{n} democratic institutions, corporate boardrooms, and international alliances, decision-making often relies on weighted voting systems. In these systems, participants hold unequal voting weights such as shares or population, and a motion passes only if the supporting players meet a pre-defined quota. However, a player's actual influence is rarely proportional to their nominal weight. This project uses the Banzhaf Power Index to reveal how mathematical thresholds can marginalize medium-sized participants or even render small members powerless. By analyzing these hidden dynamics, we provide a lens for evaluating the fairness of institutional designs, including the general amendment procedure for the Canadian Constitution.
 
-This report studies the difference between \emph{formal voting size} and \emph{voting power} through the Banzhaf Power Index. The central question is:
+The central question is: To what extent does voting weight correspond to actual power, and how do multi-dimensional rules reshape this relationship? We begin by modeling the theoretical system $[10:7,6,4,1]$ to identify critical players and demonstrate a power paradox in which unequal weights produce identical influence. We then extend the analysis to the Canadian Constitutional Amending Formula, which requires a double majority: the approval of at least seven provinces representing at least $50\%$ of the national population. By comparing a hypothetical population-only system with the actual 7/50 framework, we show mathematically how institutional rules can transform marginalized members from dummy players into pivotal decision-makers.
 
-\begin{quote}
-To what extent does a player's assigned weight or formal size correspond to that player's actual influence in a voting game?
-\end{quote}
-
-Our main claim is that formal size does not, by itself, determine voting power. Instead, power depends on coalition structure and on the rule required for passage. To show this, we compute Banzhaf indices for an exact weighted voting game and for a computational dual-majority mini-model inspired by the European Union voting system.
-
-\section{Background and Definitions}
-
-\subsection{Weighted Voting Games}
-A weighted voting game is written in the form
+\section{Mathematical Framework and Methodology}
+\subsection{Formal Modeling of Weighted Voting Systems}
+A weighted voting game is defined as
 \begin{equation}
 [q:w_1,w_2,\dots,w_n],
 \end{equation}
-where $q$ is the quota required for a motion to pass and $w_i$ is the voting weight of player $i$.
+where $q$ is the quota required for a decision to pass, $w_i$ is the voting weight of player $i$, and $n$ is the total number of players. Each subset of players forms a coalition, and decisions are made according to whether a coalition meets the quota.
 
-Let $N=\{1,2,\dots,n\}$ be the set of players. Any subset $S\subseteq N$ is called a coalition. The weight of coalition $S$ is
+Formally, a weighted voting system can be modeled as a simple game $(N,v)$, where $N=\{1,2,\dots,n\}$ is the set of players and $v:2^N\to\{0,1\}$ is a characteristic function. For a standard weighted voting game,
 \begin{equation}
-W(S)=\sum_{i\in S} w_i.
+v(S)=
+\begin{cases}
+1, & \text{if } \sum_{i\in S} w_i \ge q,\\
+0, & \text{otherwise.}
+\end{cases}
 \end{equation}
+This formulation highlights that voting systems are fundamentally set functions defined over the power set $2^N$, so their analysis is inherently combinatorial rather than purely arithmetic.
 
-A coalition $S$ is \emph{winning} if
+\subsection{Coalition Enumeration}
+To analyze voting power, we consider all possible coalitions. For a system with $n$ players, there are $2^n-1$ nonempty coalitions. A coalition $S$ is called \emph{winning} if $\sum_{i\in S} w_i \ge q$; otherwise, it is \emph{losing}. Enumerating all coalitions allows us to evaluate systematically which players are influential in decision-making. The enumeration of all coalitions corresponds to evaluating $v(S)$ over the entire Boolean lattice $2^N$. This exponential structure explains why computational methods are required even for moderately sized systems.
+
+\subsection{Identifying Critical Players}
+A key concept in measuring voting power is the idea of a \emph{critical player}, also called a swing voter. A player $i$ is critical in a coalition $S$ if the coalition is winning and removing player $i$ makes it losing. Formally, player $i$ is critical if
 \begin{equation}
-W(S)\ge q,
+\text{Weight}(S)\ge q \quad \text{and} \quad \text{Weight}(S\setminus\{i\})<q.
 \end{equation}
-and \emph{losing} otherwise.
-
-\subsection{Critical Players}
-A player $i\in S$ is called \emph{critical} in a winning coalition $S$ if removing that player causes the coalition to become losing:
+To determine this, we apply the deletion test:
+\begin{enumerate}
+    \item For each winning coalition, remove one player at a time.
+    \item Check whether the coalition becomes losing.
+\end{enumerate}
+Equivalently, the criticality condition can be written using the characteristic function as
 \begin{equation}
-W(S)\ge q
-\quad \text{and} \quad
-W(S\setminus\{i\})<q.
+v(S\cup\{i\})-v(S)=1.
 \end{equation}
+This shows that a player's influence can be interpreted as a marginal contribution over all subsets.
 
-This deletion test is the core of the Banzhaf method.
-
-\subsection{Banzhaf Power Index}
-Let $\eta_i$ denote the number of winning coalitions in which player $i$ is critical. Then $\eta_i$ is the raw Banzhaf swing count of player $i$.
-
-The normalized Banzhaf index is
+\subsection{Computation and Normalization of the Banzhaf Index}
+Let $\eta_i$ denote the number of coalitions in which player $i$ is critical. The total number of swings for player $i$ can be expressed as
+\begin{equation}
+\eta_i=\sum_{S\subseteq N\setminus\{i\}} [v(S\cup\{i\})-v(S)].
+\end{equation}
+The normalized Banzhaf index of player $i$ is then defined as
 \begin{equation}
 \beta_i=\frac{\eta_i}{\sum_{j=1}^n \eta_j}.
 \end{equation}
+This normalized index represents the proportion of total influence held by player $i$. The combinatorial expression makes clear that two players with different weights may have identical power if their marginal contributions occur in the same number of coalitions.
 
-For comparison, the normalized weight share of player $i$ is
-\begin{equation}
-\omega_i=\frac{w_i}{\sum_{j=1}^n w_j}.
-\end{equation}
+\subsection{Computational Methodology and Algorithm Design}
+Analyzing the Canadian Constitution is significantly more complex than the theoretical example above. With 10 provinces, there are $2^{10}-1=1023$ possible nonempty coalitions. To handle this computation, we developed a custom algorithm in Python.
 
-The quantity $\omega_i$ measures formal weight, while $\beta_i$ measures effective influence.
+The program generates the power set of all provinces and implements a dual-threshold validator.
+\begin{itemize}
+    \item \textbf{Iterative enumeration:} The script loops through every possible subset of provinces.
+    \item \textbf{Constraint satisfaction:} For each subset $S$, the script evaluates two conditions: $\sum_{i\in S} \text{Population}_i \ge 50\%$ and $|S|\ge 7$.
+    \item \textbf{Criticality mapping:} Once a winning coalition is identified, the script performs a deletion test by temporarily removing each member. If the removal causes the coalition to fail either threshold, that province's critical count $\eta_i$ is incremented.
+    \item \textbf{Normalization:} The Banzhaf index $\beta_i$ is obtained by dividing each province's critical count by the sum of all critical counts across the federation.
+\end{itemize}
 
-\section{Methodology}
+The population weights used in our model are sourced from Statistics Canada and represent the demographic landscape used in constitutional negotiations, ranging from Ontario's $38.8\%$ to Prince Edward Island's $0.4\%$.
 
-\subsection{Coalition Enumeration}
-For each weighted voting game, we enumerate all nonempty coalitions. For every coalition, we compute its total weight and determine whether it is winning or losing. For each winning coalition, we test every member by deletion to determine whether that player is critical.
+\subsection{Interpretation}
+The Banzhaf index measures a player's ability to influence outcomes by being pivotal in winning coalitions. It therefore gives a more accurate representation of decision-making power than nominal voting weights alone.
 
-The procedure is summarized below:
-\begin{verbatim}
-Select weighted voting game
-   -> list all nonempty coalitions
-   -> compute coalition weights
-   -> classify winning vs. losing
-   -> test each member by deletion
-   -> count critical occurrences eta_i
-   -> normalize to beta_i
-   -> compare beta_i with omega_i
-   -> interpret result
-\end{verbatim}
+\section{Analysis and Application}
+\subsection{Theoretical Case: The Power Paradox}
+To illustrate the nonlinear relationship between weight and power, we examine a four-player game. In this scenario, Player A has 7 votes, Player B has 6 votes, Player C has 4 votes, and Player D has 1 vote, with a quota of 10. This is the weighted voting game $[10:7,6,4,1]$.
 
-\subsection{Comparison Strategy}
-For each case study, we report:
-\begin{enumerate}
-    \item the weighted voting game,
-    \item the list or summary table of coalitions,
-    \item the critical counts $\eta_i$,
-    \item the normalized Banzhaf indices $\beta_i$,
-    \item the normalized weight shares $\omega_i$, and
-    \item a short interpretation of the difference between weight and power.
-\end{enumerate}
+Table~\ref{tab:coalition_analysis} enumerates all possible nonempty coalitions, their total weights, and the critical players within each winning coalition. For example, coalition $\{B,C\}$ has weight $6+4=10$ and is winning; removing either player reduces the weight below the quota, so both B and C are critical. Coalition $\{A,C\}$ has weight $7+4=11$, and removing either player again makes the coalition losing, so both are critical there as well.
 
-\subsection{Scope}
-This report combines exact, interpretable hand calculations on small weighted voting games with a computational mini-model of a dual-majority rule. The main emphasis remains transparent mathematical analysis, but the computational example shows how the same ideas extend to institutional rules that cannot be handled efficiently by hand.
-
-\section{Case Study I: Game \texorpdfstring{$[10:7,6,4,1]$}{[10:7,6,4,1]}}
-
-\subsection{Game Setup}
-Consider the weighted voting game
-\begin{equation}
-[10:7,6,4,1].
-\end{equation}
-
-The normalized weight shares are
-\begin{equation}
-\omega=\left(\frac{7}{18},\frac{6}{18},\frac{4}{18},\frac{1}{18}\right).
-\end{equation}
-
-\subsection{Coalition Table}
 \begin{table}[!t]
-\caption{Coalition Analysis for $[10:7,6,4,1]$}
-\label{tab:case1_coalitions}
+\caption{Coalition Analysis for the Weighted Voting Game $[10:7,6,4,1]$}
+\label{tab:coalition_analysis}
 \centering
 \begin{tabular}{c c c c}
 \toprule
-Coalition & Total Weight & Winning/Losing & Critical Players \\
+\textbf{Coalition} & \textbf{Weight} & \textbf{Winning} & \textbf{Critical Players} \\
 \midrule
-$\{1\}$ & 7  & Losing  & -- \\
-$\{2\}$ & 6  & Losing  & -- \\
-$\{3\}$ & 4  & Losing  & -- \\
-$\{4\}$ & 1  & Losing  & -- \\
-$\{1,2\}$ & 13 & Winning & 1, 2 \\
-$\{1,3\}$ & 11 & Winning & 1, 3 \\
-$\{1,4\}$ & 8  & Losing  & -- \\
-$\{2,3\}$ & 10 & Winning & 2, 3 \\
-$\{2,4\}$ & 7  & Losing  & -- \\
-$\{3,4\}$ & 5  & Losing  & -- \\
-$\{1,2,3\}$ & 17 & Winning & -- \\
-$\{1,2,4\}$ & 14 & Winning & 1, 2 \\
-$\{1,3,4\}$ & 12 & Winning & 1, 3 \\
-$\{2,3,4\}$ & 11 & Winning & 2, 3 \\
-$\{1,2,3,4\}$ & 18 & Winning & -- \\
+$\{A\}$ & 7 & No & -- \\
+$\{B\}$ & 6 & No & -- \\
+$\{C\}$ & 4 & No & -- \\
+$\{D\}$ & 1 & No & -- \\
+$\{A,B\}$ & 13 & Yes & A, B \\
+$\{A,C\}$ & 11 & Yes & A, C \\
+$\{A,D\}$ & 8 & No & -- \\
+$\{B,C\}$ & 10 & Yes & B, C \\
+$\{B,D\}$ & 7 & No & -- \\
+$\{C,D\}$ & 5 & No & -- \\
+$\{A,B,C\}$ & 17 & Yes & None \\
+$\{A,B,D\}$ & 14 & Yes & A, B \\
+$\{A,C,D\}$ & 12 & Yes & A, C \\
+$\{B,C,D\}$ & 11 & Yes & B, C \\
+$\{A,B,C,D\}$ & 18 & Yes & None \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Swing Count and Banzhaf Index}
-After applying the deletion test to all winning coalitions, the raw swing counts are
-\begin{equation}
-(\eta_1,\eta_2,\eta_3,\eta_4)=(4,4,4,0).
-\end{equation}
+\begin{observation}[Equalization of Power]
+By systematically enumerating all coalitions, Players A, B, and C each have 4 swings, so $\eta_A=\eta_B=\eta_C=4$. This yields an identical Banzhaf index of $33.3\%$ for all three players. Despite Player A having nearly double the votes of Player C, they hold exactly the same influence over the outcome.
+\end{observation}
 
-Hence the normalized Banzhaf vector is
-\begin{equation}
-(\beta_1,\beta_2,\beta_3,\beta_4)=\left(\frac{1}{3},\frac{1}{3},\frac{1}{3},0\right).
-\end{equation}
+\begin{observation}[Dummy Player]
+Player D holds 1 vote but has 0 swings, so $\eta_D=0$. This player is a dummy player: no matter which coalition D joins, D never turns a losing outcome into a winning one.
+\end{observation}
 
-\subsection{Interpretation}
-Case Study I shows immediately that larger weight does not imply proportionally larger power. Players 1, 2, and 3 have weights $7$, $6$, and $4$, but all three have the same normalized Banzhaf power, namely $1/3$. By contrast, Player 4 has positive weight but is never critical in any winning coalition, so Player 4 is a dummy player with zero effective power. This example already demonstrates that coalition structure, rather than nominal weight alone, determines influence.
-
-\section{Case Study II: EU Dual-Majority Mini-Model}
-
-\subsection{Game Setup}
-The second case study is a six-country computational mini-model inspired by the EU Council's dual-majority voting rule. Instead of a single weighted quota, a coalition is winning only if it satisfies two conditions simultaneously:
-\begin{equation}
-\text{number of supporting states}\ge 4
-\end{equation}
-and
-\begin{equation}
-\text{population share of supporting states}\ge 0.65.
-\end{equation}
-
-The six-country sample used in this project is Germany, France, Spain, the Netherlands, Luxembourg, and Malta. This mini-model is not the full EU system; rather, it is a smaller computational analogue that preserves the same logical structure of a state threshold combined with a population threshold.
-
-\subsection{Computational Method}
-Because the mini-model has six players, it contains $2^6-1=63$ nonempty coalitions. We enumerate all of them with Python. For each coalition, the program checks whether both the state threshold and the population threshold are satisfied. For every winning coalition, each member is removed in turn to test whether that country is critical. This produces a raw swing count for each country and, after normalization, a Banzhaf index.
-
-\subsection{Summary Results}
-\begin{table}[!t]
-\caption{Population Share and Banzhaf Power in the EU Mini-Model}
-\label{tab:eu_mini_summary}
+\begin{figure}[!t]
 \centering
-\footnotesize
-\begin{tabular}{l c c c}
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    bar width=12pt,
+    width=\columnwidth,
+    height=0.72\columnwidth,
+    enlarge x limits=0.12,
+    legend style={at={(0.5,-0.18)},anchor=north,legend columns=1,font=\footnotesize},
+    ylabel={Percentage (\%)},
+    symbolic x coords={Player A,Player B,Player C,Player D},
+    xtick=data,
+    xticklabel style={font=\footnotesize,align=center},
+    nodes near coords,
+    nodes near coords align={vertical},
+    ymin=0,
+    ymax=50,
+    ymajorgrids=true,
+    grid style=dashed
+]
+\addplot coordinates {(Player A,38.9) (Player B,33.3) (Player C,22.2) (Player D,5.6)};
+\addplot coordinates {(Player A,33.3) (Player B,33.3) (Player C,33.3) (Player D,0.0)};
+\legend{Nominal Weight, Banzhaf Power}
+\end{axis}
+\end{tikzpicture}
+\caption{Comparison of nominal voting weight and Banzhaf power in the game $[10:7,6,4,1]$.}
+\label{fig:paradox}
+\end{figure}
+
+\begin{proposition}[Nonlinearity of Voting Power]
+The Banzhaf power index is not a linear function of voting weights. It depends on the number of pivotal occurrences across coalitions, so increasing a player's weight does not necessarily increase that player's number of swings.
+\end{proposition}
+
+\subsection{Real-World Application: The Canadian 7/50 Amending Formula}
+We now elevate this logic to the Canadian Constitutional Amending Formula, which acts as a multi-threshold voting game. Unlike a simple weighted game, a winning coalition $S$ must satisfy two distinct mathematical quotas:
+\begin{itemize}
+    \item \textbf{Population quota:} $\sum_{i\in S} \mathrm{Pop}_i \ge 50\%$.
+    \item \textbf{Provincial quota:} $|S|\ge 7$.
+\end{itemize}
+
+This system can be expressed by the characteristic function
+\begin{equation}
+v(S)=
+\begin{cases}
+1, & \text{if } \sum_{i\in S} \mathrm{Pop}_i \ge 50\% \text{ and } |S|\ge 7,\\
+0, & \text{otherwise.}
+\end{cases}
+\end{equation}
+
+Unlike standard weighted voting games, this formulation introduces a non-additive constraint because the outcome cannot be determined by weights alone. Instead, both the population total and the coalition size jointly determine whether the coalition is winning.
+
+Using our Python simulation, we compared the actual 7/50 framework against a hypothetical population-only system to observe how the addition of a second threshold reshapes the provincial power landscape. Table~\ref{tab:power_comparison} summarizes the results.
+
+\begin{table}[!t]
+\caption{Comparison of Population, Population-Only Power, and 7/50 Power}
+\label{tab:power_comparison}
+\centering
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrrr}
 \toprule
-Country & Population Share & Critical Count & Banzhaf Index \\
+\textbf{Province} & \textbf{Pop. \%} & \textbf{Swings (Pop)} & \textbf{$\beta_i$ (Pop)} & \textbf{Swings (7/50)} & \textbf{$\beta_i$ (7/50)} & \textbf{Change} \\
 \midrule
-Germany & 0.380 & 14 & 0.333 \\
-France & 0.312 & 8 & 0.190 \\
-Spain & 0.221 & 6 & 0.143 \\
-Netherlands & 0.082 & 6 & 0.143 \\
-Luxembourg & 0.003 & 4 & 0.095 \\
-Malta & 0.003 & 4 & 0.095 \\
+Ontario (ON)     & 38.8 & 394 & 0.5000 & 108 & 0.1463 & $-70.7\%$ \\
+Quebec (QC)      & 22.3 & 118 & 0.1497 & 78  & 0.1057 & $-29.4\%$ \\
+Brit. Col. (BC)  & 13.7 & 118 & 0.1497 & 78  & 0.1057 & $-29.4\%$ \\
+Alberta (AB)     & 11.7 & 118 & 0.1497 & 78  & 0.1057 & $-29.4\%$ \\
+Manitoba (MB)    & 3.6  & 10  & 0.0127 & 66  & 0.0894 & $+603.9\%$ \\
+Sask. (SK)       & 3.1  & 10  & 0.0127 & 66  & 0.0894 & $+603.9\%$ \\
+Nova Scotia (NS) & 2.6  & 10  & 0.0127 & 66  & 0.0894 & $+603.9\%$ \\
+New Bruns. (NB)  & 2.1  & 6   & 0.0076 & 66  & 0.0894 & $+1076\%$ \\
+Newfound. (NL)   & 1.4  & 2   & 0.0025 & 66  & 0.0894 & $+3476\%$ \\
+Prince Ed. (PE)  & 0.4  & 2   & 0.0025 & 66  & 0.0894 & $+3476\%$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\input{figures/eu_mini_population_vs_banzhaf}
+The data reveals a systematic mismatch between population weight and actual voting power, leading to three major structural transformations.
 
-\subsection{Interpretation}
-The EU mini-model shows that population share and voting power do not move together one-for-one. Germany remains the most powerful country because it contributes heavily to the population threshold, but the Netherlands has the same Banzhaf index as Spain despite having a much smaller population share. At the other end, Luxembourg and Malta each retain positive power because every state contributes equally toward the state-count requirement. The dual-majority rule therefore moderates pure population dominance and creates a more balanced distribution of influence than a single population-based threshold would.
+\subsubsection*{Finding 1: Breakdown of Proportionality}
+Under the hypothetical population-only system, one might expect the Banzhaf index to scale roughly with population size. While this relationship holds loosely for Ontario, it breaks down for the rest of the federation. Quebec's population share ($22.3\%$) is almost twice Alberta's ($11.7\%$), yet the two provinces have identical Banzhaf indices of $0.1497$. Their marginal contributions are structurally equivalent rather than proportionally determined.
 
-\section{Results and Discussion}
-Taken together, the two case studies show that voting power is determined by coalition structure, not by formal size alone. In Case Study I, three players with unequal weights end up with exactly equal Banzhaf power, while the smallest player is a dummy. In the EU mini-model, the dual-majority rule again breaks any simple identification of size with power: large countries remain influential, but medium and small countries retain leverage because the rule rewards both population and breadth of state support. The common lesson is that actual influence depends on how winning coalitions are formed and on which players are pivotal within them.
+This nonlinearity becomes even more pronounced among smaller provinces. Provinces with less than $4\%$ population share have disproportionately low power, while Newfoundland and Labrador and Prince Edward Island approach near-zero power under the population-only rule.
+
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.98\columnwidth,
+    height=0.78\columnwidth,
+    xlabel={Population Share (\%)},
+    ylabel={Banzhaf Power (\%)},
+    xmin=0,
+    xmax=45,
+    ymin=0,
+    ymax=60,
+    grid=both,
+    grid style={dashed},
+    legend pos=north west,
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize},
+    legend style={font=\scriptsize}
+]
+\addplot[domain=0:45,thick,dashed] {x};
+\addlegendentry{Ideal $y=x$}
+\addplot[only marks,mark=*,mark size=2.5pt] coordinates {
+    (38.8,50.00)
+    (22.3,14.97)
+    (13.7,14.97)
+    (11.7,14.97)
+    (3.6,1.27)
+    (3.1,1.27)
+    (2.6,1.27)
+    (2.1,0.76)
+    (1.4,0.25)
+    (0.4,0.25)
+};
+\addlegendentry{Provinces}
+\node[anchor=south west,font=\scriptsize] at (axis cs:38.8,50.00) {ON};
+\node[anchor=west,font=\scriptsize] at (axis cs:22.8,14.97) {QC};
+\node[anchor=south,font=\scriptsize] at (axis cs:13.7,16.00) {BC};
+\node[anchor=east,font=\scriptsize] at (axis cs:11.2,14.97) {AB};
+\draw[<->,thick] (axis cs:11.7,23) -- (axis cs:22.3,23)
+node[midway,above,font=\scriptsize,align=center] {Identical Power\\Despite Population Gap};
+\draw[dashed] (axis cs:11.7,15.5) -- (axis cs:11.7,22.5);
+\draw[dashed] (axis cs:22.3,15.5) -- (axis cs:22.3,22.5);
+\node[anchor=west,font=\scriptsize] at (axis cs:4.5,4) {Small provinces ($\approx 0$)};
+\end{axis}
+\end{tikzpicture}
+\caption{Population share versus Banzhaf power in the population-only system. Flat horizontal patterns indicate distinct demographic weights yielding identical power.}
+\label{fig:scatter}
+\end{figure}
+
+\subsubsection*{Finding 2: Dilution of Hegemony}
+The transition from a single-threshold to a dual-threshold system fundamentally reshapes the strategic landscape at the top. Under the population-only model, power is highly concentrated: Ontario emerges as a near-dominant player with a Banzhaf index of approximately $0.50$. This means Ontario is critical in roughly half of all winning coalitions.
+
+However, the 7/50 rule imposes a cardinality constraint. Despite its massive $38.8\%$ population share, Ontario contributes only one discrete unit toward the provincial threshold. As a result, its Banzhaf index drops to $0.1463$. Ontario must now secure the support of at least six additional provinces regardless of their population size. Introducing a cardinality constraint therefore reduces the dominance of large weights and forces coalition formation into a higher-dimensional constraint space.
+
+\subsubsection*{Finding 3: Resurrection of Small Provinces and the Power Plateau}
+The most striking transformation occurs among the smallest provinces. In the population-only system, Prince Edward Island acts almost like a dummy player, being critical only 2 times out of 1023 possible coalitions. Under the 7/50 rule, both Prince Edward Island and Newfoundland and Labrador rise to a Banzhaf index of $0.0894$, a dramatic increase that makes them critical in 66 coalitions.
+
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.98\columnwidth,
+    height=0.78\columnwidth,
+    symbolic x coords={Pop Only Rule,7/50 Rule},
+    xtick=data,
+    ymin=0,
+    ymax=0.55,
+    ylabel={Banzhaf Power Index},
+    enlarge x limits=0.2,
+    grid=major,
+    grid style={dashed},
+    legend pos=north east,
+    legend cell align={left},
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize},
+    legend style={font=\scriptsize},
+    clip=false
+]
+\addplot[thick,mark=square*,mark size=2.5pt] coordinates {(Pop Only Rule,0.5000) (7/50 Rule,0.1463)};
+\addlegendentry{Ontario (ON)}
+\addplot[thick,mark=triangle*,mark size=3pt] coordinates {(Pop Only Rule,0.1497) (7/50 Rule,0.1057)};
+\addlegendentry{QC, BC, AB}
+\addplot[thick,mark=*,mark size=2.5pt] coordinates {(Pop Only Rule,0.0025) (7/50 Rule,0.0894)};
+\addlegendentry{NL, PE}
+\addplot[thick,mark=diamond*,mark size=3pt] coordinates {(Pop Only Rule,0.0127) (7/50 Rule,0.0894)};
+\addlegendentry{MB, SK, NS}
+\node[
+    draw,
+    fill=white,
+    rounded corners=1pt,
+    inner sep=1.5pt,
+    font=\scriptsize,
+    align=center,
+    anchor=west
+] (ppLabel) at (rel axis cs:0.58,0.34) {Power\\Plateau};
+\draw[->,semithick] (ppLabel.east) to[out=0,in=180] (axis cs:7/50 Rule,0.0894);
+
+\node[
+    draw,
+    fill=white,
+    rounded corners=1pt,
+    inner sep=1.5pt,
+    font=\scriptsize,
+    align=center,
+    anchor=west
+] (dhLabel) at (rel axis cs:0.50,0.22) {Diluted\\Hegemony};
+\draw[->,semithick] (dhLabel.east) to[out=0,in=180] (axis cs:7/50 Rule,0.1463);
+\end{axis}
+\end{tikzpicture}
+\caption{Structural impact of the 7/50 rule: reduced dominance for large provinces and increased influence for smaller provinces.}
+\label{fig:trend}
+\end{figure}
+
+This dramatic shift is driven by the combinatorial structure of coalition formation. Because the $50\%$ population threshold is often satisfied by combinations of larger provinces, the provincial threshold becomes the binding constraint. When coalitions reach six provinces with sufficient population, the addition of a mathematically small seventh province becomes decisive. This makes several smaller provinces functionally interchangeable as pivotal members.
+
+\begin{proposition}[Power Plateau Phenomenon]
+In a dual-threshold voting system, if the population constraint is frequently satisfied independently, then smaller players become interchangeable in satisfying the cardinality constraint, leading to identical Banzhaf indices.
+\end{proposition}
+
+A further consequence is a power convergence phenomenon. Our results show that the Banzhaf indices of the six smaller provinces from Manitoba down to Prince Edward Island converge to the same value of $0.0894$. This power plateau indicates that differences in population size no longer generate differences in voting power. The rule effectively compresses variation, treating smaller provinces as interchangeable units required to satisfy the provincial quota rather than as weighted demographic actors.
 
 \section{Limitations}
-The Banzhaf Power Index is useful because it gives a clear combinatorial measure of influence, but it also has limitations. It assumes that all coalitions are equally plausible and does not model ideology, bargaining costs, repeated interaction, or institutional rules beyond the quota and weights. As a result, the index is best interpreted as a mathematical measure of structural voting power rather than a full sociopolitical model of decision-making.
+While the Banzhaf Power Index provides a clear combinatorial measure of voting power, it has several important limitations.
+
+First, it assumes a uniform distribution over all coalitions, treating each subset as equally likely. This is an external modeling assumption and not a consequence of the institutional system itself.
+
+Second, the index is based on binary pivotality: a player is either critical or not. As a result, microscopically small changes in weights or thresholds can sometimes produce disproportionately large changes in measured power.
+
+Third, the model is static and combinatorial. Unlike permutation-based measures such as the Shapley--Shubik index, it does not incorporate ordering or temporal coalition formation.
+
+Fourth, in multi-threshold systems such as the Canadian 7/50 rule, non-additive constraints sever any direct relationship between weight and power. Standard proportional intuitions can therefore fail dramatically.
+
+Finally, the normalized index is inherently relative because each player's fractional power depends on the total number of swings across all players. A change affecting one player therefore changes the full distribution.
 
 \section{Conclusion}
-This report examined the relationship between formal voting weight and actual voting power in weighted voting games. Using the Banzhaf Power Index, we found that the distribution of influence depends on criticality within coalitions rather than on assigned weight alone. The case studies showed that unequal weights may produce equal power, that positive weights may yield zero effective power, and that changing the quota can substantially alter the balance of influence.
+This project demonstrates that voting power in weighted systems is fundamentally a combinatorial phenomenon rather than a direct function of nominal voting weights. Through the Banzhaf Power Index, we showed that a player's influence depends on the frequency with which that player is pivotal across all possible coalitions.
 
-Taken together, Case Study I and the EU mini-model express the same mathematical idea at two different scales. Case Study I makes the combinatorial logic fully transparent: a player matters only when that player is pivotal in a winning coalition. The EU case then shows that this principle remains true in a more realistic institutional setting, where a dual-majority rule redistributes influence by combining a population threshold with a state-count threshold. Therefore, voting systems should be analyzed through coalition structure and critical-player behavior, not only through nominal vote totals.
+In the theoretical game $[10:7,6,4,1]$, players with unequal weights can possess identical power, while a smaller player can become completely irrelevant. Extending the framework to the Canadian Constitutional Amending Formula shows that introducing a cardinality constraint fundamentally alters the combinatorial structure of winning coalitions. Large provinces lose dominance because they need broader coalition support, while small provinces gain influence by helping coalitions satisfy the provincial threshold.
 
-\section*{Acknowledgment}
-The authors acknowledge the MATH 302 instructional team for guidance on voting games and mathematical modeling.
+Most notably, the emergence of a power plateau among smaller provinces demonstrates that, under binding multi-threshold constraints, voting power can converge across players despite population differences. More broadly, the analysis shows that voting systems must be evaluated through their mathematical structure. The Banzhaf framework provides a rigorous way to reveal hidden imbalances that are not visible from voting weights alone.
 
 \begin{thebibliography}{00}
 
